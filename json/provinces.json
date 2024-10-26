@@ -1,0 +1,619 @@
+{
+"provinces": [
+	{
+		"PROVINCE_ID" : 1,
+		"CODE" : "10",
+		"PROVINCE_THAI" : "กรุงเทพมหานคร",
+		"PROVINCE_ENGLISH" : "Bangkok",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 2,
+		"CODE" : "11",
+		"PROVINCE_THAI" : "สมุทรปราการ",
+		"PROVINCE_ENGLISH" : "Samut Prakan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 3,
+		"CODE" : "12",
+		"PROVINCE_THAI" : "นนทบุรี",
+		"PROVINCE_ENGLISH" : "Nonthaburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 4,
+		"CODE" : "13",
+		"PROVINCE_THAI" : "ปทุมธานี",
+		"PROVINCE_ENGLISH" : "Pathum Thani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 5,
+		"CODE" : "14",
+		"PROVINCE_THAI" : "พระนครศรีอยุธยา",
+		"PROVINCE_ENGLISH" : "Phra Nakhon Si Ayutthaya",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 6,
+		"CODE" : "15",
+		"PROVINCE_THAI" : "อ่างทอง",
+		"PROVINCE_ENGLISH" : "Ang Thong",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 7,
+		"CODE" : "16",
+		"PROVINCE_THAI" : "ลพบุรี",
+		"PROVINCE_ENGLISH" : "Lop Buri",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 8,
+		"CODE" : "17",
+		"PROVINCE_THAI" : "สิงห์บุรี",
+		"PROVINCE_ENGLISH" : "Sing Buri",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 9,
+		"CODE" : "18",
+		"PROVINCE_THAI" : "ชัยนาท",
+		"PROVINCE_ENGLISH" : "Chai Nat",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 10,
+		"CODE" : "19",
+		"PROVINCE_THAI" : "สระบุรี",
+		"PROVINCE_ENGLISH" : "Saraburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 11,
+		"CODE" : "20",
+		"PROVINCE_THAI" : "ชลบุรี",
+		"PROVINCE_ENGLISH" : "Chon Buri",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 12,
+		"CODE" : "21",
+		"PROVINCE_THAI" : "ระยอง",
+		"PROVINCE_ENGLISH" : "Rayong",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 13,
+		"CODE" : "22",
+		"PROVINCE_THAI" : "จันทบุรี",
+		"PROVINCE_ENGLISH" : "Chanthaburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 14,
+		"CODE" : "23",
+		"PROVINCE_THAI" : "ตราด",
+		"PROVINCE_ENGLISH" : "Trat",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 15,
+		"CODE" : "24",
+		"PROVINCE_THAI" : "ฉะเชิงเทรา",
+		"PROVINCE_ENGLISH" : "Chachoengsao",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 16,
+		"CODE" : "25",
+		"PROVINCE_THAI" : "ปราจีนบุรี",
+		"PROVINCE_ENGLISH" : "Prachin Buri",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 17,
+		"CODE" : "26",
+		"PROVINCE_THAI" : "นครนายก",
+		"PROVINCE_ENGLISH" : "Nakhon Nayok",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 18,
+		"CODE" : "27",
+		"PROVINCE_THAI" : "สระแก้ว",
+		"PROVINCE_ENGLISH" : "Sa Kaeo",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 19,
+		"CODE" : "30",
+		"PROVINCE_THAI" : "นครราชสีมา",
+		"PROVINCE_ENGLISH" : "Nakhon Ratchasima",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 20,
+		"CODE" : "31",
+		"PROVINCE_THAI" : "บุรีรัมย์",
+		"PROVINCE_ENGLISH" : "Buri Ram",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 21,
+		"CODE" : "32",
+		"PROVINCE_THAI" : "สุรินทร์",
+		"PROVINCE_ENGLISH" : "Surin",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 22,
+		"CODE" : "33",
+		"PROVINCE_THAI" : "ศรีสะเกษ",
+		"PROVINCE_ENGLISH" : "Si Sa Ket",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 23,
+		"CODE" : "34",
+		"PROVINCE_THAI" : "อุบลราชธานี",
+		"PROVINCE_ENGLISH" : "Ubon Ratchathani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 24,
+		"CODE" : "35",
+		"PROVINCE_THAI" : "ยโสธร",
+		"PROVINCE_ENGLISH" : "Yasothon",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 25,
+		"CODE" : "36",
+		"PROVINCE_THAI" : "ชัยภูมิ",
+		"PROVINCE_ENGLISH" : "Chaiyaphum",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 26,
+		"CODE" : "37",
+		"PROVINCE_THAI" : "อำนาจเจริญ",
+		"PROVINCE_ENGLISH" : "Amnat Charoen",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 27,
+		"CODE" : "38",
+		"PROVINCE_THAI" : "บึงกาฬ",
+		"PROVINCE_ENGLISH" : "Bueng Kan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 28,
+		"CODE" : "39",
+		"PROVINCE_THAI" : "หนองบัวลำภู",
+		"PROVINCE_ENGLISH" : "Nong Bua Lam Phu",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 29,
+		"CODE" : "40",
+		"PROVINCE_THAI" : "ขอนแก่น",
+		"PROVINCE_ENGLISH" : "Khon Kaen",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 30,
+		"CODE" : "41",
+		"PROVINCE_THAI" : "อุดรธานี",
+		"PROVINCE_ENGLISH" : "Udon Thani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 31,
+		"CODE" : "42",
+		"PROVINCE_THAI" : "เลย",
+		"PROVINCE_ENGLISH" : "Loei",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 32,
+		"CODE" : "43",
+		"PROVINCE_THAI" : "หนองคาย",
+		"PROVINCE_ENGLISH" : "Nong Khai",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 33,
+		"CODE" : "44",
+		"PROVINCE_THAI" : "มหาสารคาม",
+		"PROVINCE_ENGLISH" : "Maha Sarakham",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 34,
+		"CODE" : "45",
+		"PROVINCE_THAI" : "ร้อยเอ็ด",
+		"PROVINCE_ENGLISH" : "Roi Et",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 35,
+		"CODE" : "46",
+		"PROVINCE_THAI" : "กาฬสินธุ์",
+		"PROVINCE_ENGLISH" : "Kalasin",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 36,
+		"CODE" : "47",
+		"PROVINCE_THAI" : "สกลนคร",
+		"PROVINCE_ENGLISH" : "Sakon Nakhon",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 37,
+		"CODE" : "48",
+		"PROVINCE_THAI" : "นครพนม",
+		"PROVINCE_ENGLISH" : "Nakhon Phanom",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 38,
+		"CODE" : "49",
+		"PROVINCE_THAI" : "มุกดาหาร",
+		"PROVINCE_ENGLISH" : "Mukdahan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 39,
+		"CODE" : "50",
+		"PROVINCE_THAI" : "เชียงใหม่",
+		"PROVINCE_ENGLISH" : "Chiang Mai",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 40,
+		"CODE" : "51",
+		"PROVINCE_THAI" : "ลำพูน",
+		"PROVINCE_ENGLISH" : "Lamphun",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 41,
+		"CODE" : "52",
+		"PROVINCE_THAI" : "ลำปาง",
+		"PROVINCE_ENGLISH" : "Lampang",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 42,
+		"CODE" : "53",
+		"PROVINCE_THAI" : "อุตรดิตถ์",
+		"PROVINCE_ENGLISH" : "Uttaradit",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 43,
+		"CODE" : "54",
+		"PROVINCE_THAI" : "แพร่",
+		"PROVINCE_ENGLISH" : "Phrae",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 44,
+		"CODE" : "55",
+		"PROVINCE_THAI" : "น่าน",
+		"PROVINCE_ENGLISH" : "Nan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 45,
+		"CODE" : "56",
+		"PROVINCE_THAI" : "พะเยา",
+		"PROVINCE_ENGLISH" : "Phayao",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 46,
+		"CODE" : "57",
+		"PROVINCE_THAI" : "เชียงราย",
+		"PROVINCE_ENGLISH" : "Chiang Rai",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 47,
+		"CODE" : "58",
+		"PROVINCE_THAI" : "แม่ฮ่องสอน",
+		"PROVINCE_ENGLISH" : "Mae Hong Son",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 48,
+		"CODE" : "60",
+		"PROVINCE_THAI" : "นครสวรรค์",
+		"PROVINCE_ENGLISH" : "Nakhon Sawan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 49,
+		"CODE" : "61",
+		"PROVINCE_THAI" : "อุทัยธานี",
+		"PROVINCE_ENGLISH" : "Uthai Thani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 50,
+		"CODE" : "62",
+		"PROVINCE_THAI" : "กำแพงเพชร",
+		"PROVINCE_ENGLISH" : "Kamphaeng Phet",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 51,
+		"CODE" : "63",
+		"PROVINCE_THAI" : "ตาก",
+		"PROVINCE_ENGLISH" : "Tak",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 52,
+		"CODE" : "64",
+		"PROVINCE_THAI" : "สุโขทัย",
+		"PROVINCE_ENGLISH" : "Sukhothai",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 53,
+		"CODE" : "65",
+		"PROVINCE_THAI" : "พิษณุโลก",
+		"PROVINCE_ENGLISH" : "Phitsanulok",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 54,
+		"CODE" : "66",
+		"PROVINCE_THAI" : "พิจิตร",
+		"PROVINCE_ENGLISH" : "Phichit",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 55,
+		"CODE" : "67",
+		"PROVINCE_THAI" : "เพชรบูรณ์",
+		"PROVINCE_ENGLISH" : "Phetchabun",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 56,
+		"CODE" : "70",
+		"PROVINCE_THAI" : "ราชบุรี",
+		"PROVINCE_ENGLISH" : "Ratchaburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 57,
+		"CODE" : "71",
+		"PROVINCE_THAI" : "กาญจนบุรี",
+		"PROVINCE_ENGLISH" : "Kanchanaburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 58,
+		"CODE" : "72",
+		"PROVINCE_THAI" : "สุพรรณบุรี",
+		"PROVINCE_ENGLISH" : "Suphan Buri",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 59,
+		"CODE" : "73",
+		"PROVINCE_THAI" : "นครปฐม",
+		"PROVINCE_ENGLISH" : "Nakhon Pathom",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 60,
+		"CODE" : "74",
+		"PROVINCE_THAI" : "สมุทรสาคร",
+		"PROVINCE_ENGLISH" : "Samut Sakhon",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 61,
+		"CODE" : "75",
+		"PROVINCE_THAI" : "สมุทรสงคราม",
+		"PROVINCE_ENGLISH" : "Samut Songkhram",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 62,
+		"CODE" : "76",
+		"PROVINCE_THAI" : "เพชรบุรี",
+		"PROVINCE_ENGLISH" : "Phetchaburi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 63,
+		"CODE" : "77",
+		"PROVINCE_THAI" : "ประจวบคีรีขันธ์",
+		"PROVINCE_ENGLISH" : "Prachuap Khiri Khan",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 64,
+		"CODE" : "80",
+		"PROVINCE_THAI" : "นครศรีธรรมราช",
+		"PROVINCE_ENGLISH" : "Nakhon Si Thammarat",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 65,
+		"CODE" : "81",
+		"PROVINCE_THAI" : "กระบี่",
+		"PROVINCE_ENGLISH" : "Krabi",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 66,
+		"CODE" : "82",
+		"PROVINCE_THAI" : "พังงา",
+		"PROVINCE_ENGLISH" : "Phang-nga",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 67,
+		"CODE" : "83",
+		"PROVINCE_THAI" : "ภูเก็ต",
+		"PROVINCE_ENGLISH" : "Phuket",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 68,
+		"CODE" : "84",
+		"PROVINCE_THAI" : "สุราษฎร์ธานี",
+		"PROVINCE_ENGLISH" : "Surat Thani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 69,
+		"CODE" : "85",
+		"PROVINCE_THAI" : "ระนอง",
+		"PROVINCE_ENGLISH" : "Ranong",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 70,
+		"CODE" : "86",
+		"PROVINCE_THAI" : "ชุมพร",
+		"PROVINCE_ENGLISH" : "Chumphon",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 71,
+		"CODE" : "90",
+		"PROVINCE_THAI" : "สงขลา",
+		"PROVINCE_ENGLISH" : "Songkhla",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 72,
+		"CODE" : "91",
+		"PROVINCE_THAI" : "สตูล",
+		"PROVINCE_ENGLISH" : "Satun",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 73,
+		"CODE" : "92",
+		"PROVINCE_THAI" : "ตรัง",
+		"PROVINCE_ENGLISH" : "Trang",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 74,
+		"CODE" : "93",
+		"PROVINCE_THAI" : "พัทลุง",
+		"PROVINCE_ENGLISH" : "Phatthalung",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 75,
+		"CODE" : "94",
+		"PROVINCE_THAI" : "ปัตตานี",
+		"PROVINCE_ENGLISH" : "Pattani",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 76,
+		"CODE" : "95",
+		"PROVINCE_THAI" : "ยะลา",
+		"PROVINCE_ENGLISH" : "Yala",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	},
+	{
+		"PROVINCE_ID" : 77,
+		"CODE" : "96",
+		"PROVINCE_THAI" : "นราธิวาส",
+		"PROVINCE_ENGLISH" : "Narathiwat",
+		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
+		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
+	}
+]}
