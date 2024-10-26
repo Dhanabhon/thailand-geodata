@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="thailand-geodata">
+	<entities>
+		<data-source id="mariaDB-19271bb0f71-180da04ba91088db">
+			<entity id="1" name="districts" fq-name="dld_nid.districts">
+				<path name="dld_nid"/>
+			</entity>
+			<entity id="2" name="provinces" fq-name="dld_nid.provinces">
+				<path name="dld_nid"/>
+			</entity>
+			<entity id="3" name="sub_districts" fq-name="dld_nid.sub_districts">
+				<path name="dld_nid"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="sub_districts_ibfk_1" fq-name="dld_nid.sub_districts.sub_districts_ibfk_1" type="fk" pk-ref="1" fk-ref="3"/>
+		<relation name="districts_ibfk_1" fq-name="dld_nid.districts.districts_ibfk_1" type="fk" pk-ref="2" fk-ref="1"/>
+	</relations>
+</diagram>
