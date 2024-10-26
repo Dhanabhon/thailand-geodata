@@ -3,7 +3,7 @@
 	{
 		"PROVINCE_ID" : 1,
 		"CODE" : "10",
-		"PROVINCE_THAI" : "°√ÿß‡∑æ¡À“π§√",
+		"PROVINCE_THAI" : "‡∏Å‡∏£‡∏∏‡∏á‡πÄ‡∏ó‡∏û‡∏°‡∏´‡∏≤‡∏ô‡∏Ñ‡∏£",
 		"PROVINCE_ENGLISH" : "Bangkok",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -11,7 +11,7 @@
 	{
 		"PROVINCE_ID" : 2,
 		"CODE" : "11",
-		"PROVINCE_THAI" : " ¡ÿ∑√ª√“°“√",
+		"PROVINCE_THAI" : "‡∏™‡∏°‡∏∏‡∏ó‡∏£‡∏õ‡∏£‡∏≤‡∏Å‡∏≤‡∏£",
 		"PROVINCE_ENGLISH" : "Samut Prakan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -19,7 +19,7 @@
 	{
 		"PROVINCE_ID" : 3,
 		"CODE" : "12",
-		"PROVINCE_THAI" : "ππ∑∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏ô‡∏ô‡∏ó‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Nonthaburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -27,7 +27,7 @@
 	{
 		"PROVINCE_ID" : 4,
 		"CODE" : "13",
-		"PROVINCE_THAI" : "ª∑ÿ¡∏“π’",
+		"PROVINCE_THAI" : "‡∏õ‡∏ó‡∏∏‡∏°‡∏ò‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Pathum Thani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -35,7 +35,7 @@
 	{
 		"PROVINCE_ID" : 5,
 		"CODE" : "14",
-		"PROVINCE_THAI" : "æ√–π§√»√’Õ¬ÿ∏¬“",
+		"PROVINCE_THAI" : "‡∏û‡∏£‡∏∞‡∏ô‡∏Ñ‡∏£‡∏®‡∏£‡∏µ‡∏≠‡∏¢‡∏∏‡∏ò‡∏¢‡∏≤",
 		"PROVINCE_ENGLISH" : "Phra Nakhon Si Ayutthaya",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -43,7 +43,7 @@
 	{
 		"PROVINCE_ID" : 6,
 		"CODE" : "15",
-		"PROVINCE_THAI" : "ÕË“ß∑Õß",
+		"PROVINCE_THAI" : "‡∏≠‡πà‡∏≤‡∏á‡∏ó‡∏≠‡∏á",
 		"PROVINCE_ENGLISH" : "Ang Thong",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -51,7 +51,7 @@
 	{
 		"PROVINCE_ID" : 7,
 		"CODE" : "16",
-		"PROVINCE_THAI" : "≈æ∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏•‡∏û‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Lop Buri",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -59,7 +59,7 @@
 	{
 		"PROVINCE_ID" : 8,
 		"CODE" : "17",
-		"PROVINCE_THAI" : " ‘ßÀÏ∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏™‡∏¥‡∏á‡∏´‡πå‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Sing Buri",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -67,7 +67,7 @@
 	{
 		"PROVINCE_ID" : 9,
 		"CODE" : "18",
-		"PROVINCE_THAI" : "™—¬π“∑",
+		"PROVINCE_THAI" : "‡∏ä‡∏±‡∏¢‡∏ô‡∏≤‡∏ó",
 		"PROVINCE_ENGLISH" : "Chai Nat",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -75,7 +75,7 @@
 	{
 		"PROVINCE_ID" : 10,
 		"CODE" : "19",
-		"PROVINCE_THAI" : " √–∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏™‡∏£‡∏∞‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Saraburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -83,7 +83,7 @@
 	{
 		"PROVINCE_ID" : 11,
 		"CODE" : "20",
-		"PROVINCE_THAI" : "™≈∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏ä‡∏•‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Chon Buri",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -91,7 +91,7 @@
 	{
 		"PROVINCE_ID" : 12,
 		"CODE" : "21",
-		"PROVINCE_THAI" : "√–¬Õß",
+		"PROVINCE_THAI" : "‡∏£‡∏∞‡∏¢‡∏≠‡∏á",
 		"PROVINCE_ENGLISH" : "Rayong",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -99,7 +99,7 @@
 	{
 		"PROVINCE_ID" : 13,
 		"CODE" : "22",
-		"PROVINCE_THAI" : "®—π∑∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏à‡∏±‡∏ô‡∏ó‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Chanthaburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -107,7 +107,7 @@
 	{
 		"PROVINCE_ID" : 14,
 		"CODE" : "23",
-		"PROVINCE_THAI" : "µ√“¥",
+		"PROVINCE_THAI" : "‡∏ï‡∏£‡∏≤‡∏î",
 		"PROVINCE_ENGLISH" : "Trat",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -115,7 +115,7 @@
 	{
 		"PROVINCE_ID" : 15,
 		"CODE" : "24",
-		"PROVINCE_THAI" : "©–‡™‘ß‡∑√“",
+		"PROVINCE_THAI" : "‡∏â‡∏∞‡πÄ‡∏ä‡∏¥‡∏á‡πÄ‡∏ó‡∏£‡∏≤",
 		"PROVINCE_ENGLISH" : "Chachoengsao",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -123,7 +123,7 @@
 	{
 		"PROVINCE_ID" : 16,
 		"CODE" : "25",
-		"PROVINCE_THAI" : "ª√“®’π∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏õ‡∏£‡∏≤‡∏à‡∏µ‡∏ô‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Prachin Buri",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -131,7 +131,7 @@
 	{
 		"PROVINCE_ID" : 17,
 		"CODE" : "26",
-		"PROVINCE_THAI" : "π§√π“¬°",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏ô‡∏≤‡∏¢‡∏Å",
 		"PROVINCE_ENGLISH" : "Nakhon Nayok",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -139,7 +139,7 @@
 	{
 		"PROVINCE_ID" : 18,
 		"CODE" : "27",
-		"PROVINCE_THAI" : " √–·°È«",
+		"PROVINCE_THAI" : "‡∏™‡∏£‡∏∞‡πÅ‡∏Å‡πâ‡∏ß",
 		"PROVINCE_ENGLISH" : "Sa Kaeo",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -147,7 +147,7 @@
 	{
 		"PROVINCE_ID" : 19,
 		"CODE" : "30",
-		"PROVINCE_THAI" : "π§√√“™ ’¡“",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏£‡∏≤‡∏ä‡∏™‡∏µ‡∏°‡∏≤",
 		"PROVINCE_ENGLISH" : "Nakhon Ratchasima",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -155,7 +155,7 @@
 	{
 		"PROVINCE_ID" : 20,
 		"CODE" : "31",
-		"PROVINCE_THAI" : "∫ÿ√’√—¡¬Ï",
+		"PROVINCE_THAI" : "‡∏ö‡∏∏‡∏£‡∏µ‡∏£‡∏±‡∏°‡∏¢‡πå",
 		"PROVINCE_ENGLISH" : "Buri Ram",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -163,7 +163,7 @@
 	{
 		"PROVINCE_ID" : 21,
 		"CODE" : "32",
-		"PROVINCE_THAI" : " ÿ√‘π∑√Ï",
+		"PROVINCE_THAI" : "‡∏™‡∏∏‡∏£‡∏¥‡∏ô‡∏ó‡∏£‡πå",
 		"PROVINCE_ENGLISH" : "Surin",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -171,7 +171,7 @@
 	{
 		"PROVINCE_ID" : 22,
 		"CODE" : "33",
-		"PROVINCE_THAI" : "»√’ –‡°…",
+		"PROVINCE_THAI" : "‡∏®‡∏£‡∏µ‡∏™‡∏∞‡πÄ‡∏Å‡∏©",
 		"PROVINCE_ENGLISH" : "Si Sa Ket",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -179,7 +179,7 @@
 	{
 		"PROVINCE_ID" : 23,
 		"CODE" : "34",
-		"PROVINCE_THAI" : "Õÿ∫≈√“™∏“π’",
+		"PROVINCE_THAI" : "‡∏≠‡∏∏‡∏ö‡∏•‡∏£‡∏≤‡∏ä‡∏ò‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Ubon Ratchathani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -187,7 +187,7 @@
 	{
 		"PROVINCE_ID" : 24,
 		"CODE" : "35",
-		"PROVINCE_THAI" : "¬‚ ∏√",
+		"PROVINCE_THAI" : "‡∏¢‡πÇ‡∏™‡∏ò‡∏£",
 		"PROVINCE_ENGLISH" : "Yasothon",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -195,7 +195,7 @@
 	{
 		"PROVINCE_ID" : 25,
 		"CODE" : "36",
-		"PROVINCE_THAI" : "™—¬¿Ÿ¡‘",
+		"PROVINCE_THAI" : "‡∏ä‡∏±‡∏¢‡∏†‡∏π‡∏°‡∏¥",
 		"PROVINCE_ENGLISH" : "Chaiyaphum",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -203,7 +203,7 @@
 	{
 		"PROVINCE_ID" : 26,
 		"CODE" : "37",
-		"PROVINCE_THAI" : "Õ”π“®‡®√‘≠",
+		"PROVINCE_THAI" : "‡∏≠‡∏≥‡∏ô‡∏≤‡∏à‡πÄ‡∏à‡∏£‡∏¥‡∏ç",
 		"PROVINCE_ENGLISH" : "Amnat Charoen",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -211,7 +211,7 @@
 	{
 		"PROVINCE_ID" : 27,
 		"CODE" : "38",
-		"PROVINCE_THAI" : "∫÷ß°“Ã",
+		"PROVINCE_THAI" : "‡∏ö‡∏∂‡∏á‡∏Å‡∏≤‡∏¨",
 		"PROVINCE_ENGLISH" : "Bueng Kan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -219,7 +219,7 @@
 	{
 		"PROVINCE_ID" : 28,
 		"CODE" : "39",
-		"PROVINCE_THAI" : "ÀπÕß∫—«≈”¿Ÿ",
+		"PROVINCE_THAI" : "‡∏´‡∏ô‡∏≠‡∏á‡∏ö‡∏±‡∏ß‡∏•‡∏≥‡∏†‡∏π",
 		"PROVINCE_ENGLISH" : "Nong Bua Lam Phu",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -227,7 +227,7 @@
 	{
 		"PROVINCE_ID" : 29,
 		"CODE" : "40",
-		"PROVINCE_THAI" : "¢Õπ·°Ëπ",
+		"PROVINCE_THAI" : "‡∏Ç‡∏≠‡∏ô‡πÅ‡∏Å‡πà‡∏ô",
 		"PROVINCE_ENGLISH" : "Khon Kaen",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -235,7 +235,7 @@
 	{
 		"PROVINCE_ID" : 30,
 		"CODE" : "41",
-		"PROVINCE_THAI" : "Õÿ¥√∏“π’",
+		"PROVINCE_THAI" : "‡∏≠‡∏∏‡∏î‡∏£‡∏ò‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Udon Thani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -243,7 +243,7 @@
 	{
 		"PROVINCE_ID" : 31,
 		"CODE" : "42",
-		"PROVINCE_THAI" : "‡≈¬",
+		"PROVINCE_THAI" : "‡πÄ‡∏•‡∏¢",
 		"PROVINCE_ENGLISH" : "Loei",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -251,7 +251,7 @@
 	{
 		"PROVINCE_ID" : 32,
 		"CODE" : "43",
-		"PROVINCE_THAI" : "ÀπÕß§“¬",
+		"PROVINCE_THAI" : "‡∏´‡∏ô‡∏≠‡∏á‡∏Ñ‡∏≤‡∏¢",
 		"PROVINCE_ENGLISH" : "Nong Khai",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -259,7 +259,7 @@
 	{
 		"PROVINCE_ID" : 33,
 		"CODE" : "44",
-		"PROVINCE_THAI" : "¡À“ “√§“¡",
+		"PROVINCE_THAI" : "‡∏°‡∏´‡∏≤‡∏™‡∏≤‡∏£‡∏Ñ‡∏≤‡∏°",
 		"PROVINCE_ENGLISH" : "Maha Sarakham",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -267,7 +267,7 @@
 	{
 		"PROVINCE_ID" : 34,
 		"CODE" : "45",
-		"PROVINCE_THAI" : "√ÈÕ¬‡ÕÁ¥",
+		"PROVINCE_THAI" : "‡∏£‡πâ‡∏≠‡∏¢‡πÄ‡∏≠‡πá‡∏î",
 		"PROVINCE_ENGLISH" : "Roi Et",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -275,7 +275,7 @@
 	{
 		"PROVINCE_ID" : 35,
 		"CODE" : "46",
-		"PROVINCE_THAI" : "°“Ã ‘π∏ÿÏ",
+		"PROVINCE_THAI" : "‡∏Å‡∏≤‡∏¨‡∏™‡∏¥‡∏ô‡∏ò‡∏∏‡πå",
 		"PROVINCE_ENGLISH" : "Kalasin",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -283,7 +283,7 @@
 	{
 		"PROVINCE_ID" : 36,
 		"CODE" : "47",
-		"PROVINCE_THAI" : " °≈π§√",
+		"PROVINCE_THAI" : "‡∏™‡∏Å‡∏•‡∏ô‡∏Ñ‡∏£",
 		"PROVINCE_ENGLISH" : "Sakon Nakhon",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -291,7 +291,7 @@
 	{
 		"PROVINCE_ID" : 37,
 		"CODE" : "48",
-		"PROVINCE_THAI" : "π§√æπ¡",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏û‡∏ô‡∏°",
 		"PROVINCE_ENGLISH" : "Nakhon Phanom",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -299,7 +299,7 @@
 	{
 		"PROVINCE_ID" : 38,
 		"CODE" : "49",
-		"PROVINCE_THAI" : "¡ÿ°¥“À“√",
+		"PROVINCE_THAI" : "‡∏°‡∏∏‡∏Å‡∏î‡∏≤‡∏´‡∏≤‡∏£",
 		"PROVINCE_ENGLISH" : "Mukdahan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -307,7 +307,7 @@
 	{
 		"PROVINCE_ID" : 39,
 		"CODE" : "50",
-		"PROVINCE_THAI" : "‡™’¬ß„À¡Ë",
+		"PROVINCE_THAI" : "‡πÄ‡∏ä‡∏µ‡∏¢‡∏á‡πÉ‡∏´‡∏°‡πà",
 		"PROVINCE_ENGLISH" : "Chiang Mai",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -315,7 +315,7 @@
 	{
 		"PROVINCE_ID" : 40,
 		"CODE" : "51",
-		"PROVINCE_THAI" : "≈”æŸπ",
+		"PROVINCE_THAI" : "‡∏•‡∏≥‡∏û‡∏π‡∏ô",
 		"PROVINCE_ENGLISH" : "Lamphun",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -323,7 +323,7 @@
 	{
 		"PROVINCE_ID" : 41,
 		"CODE" : "52",
-		"PROVINCE_THAI" : "≈”ª“ß",
+		"PROVINCE_THAI" : "‡∏•‡∏≥‡∏õ‡∏≤‡∏á",
 		"PROVINCE_ENGLISH" : "Lampang",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -331,7 +331,7 @@
 	{
 		"PROVINCE_ID" : 42,
 		"CODE" : "53",
-		"PROVINCE_THAI" : "Õÿµ√¥‘µ∂Ï",
+		"PROVINCE_THAI" : "‡∏≠‡∏∏‡∏ï‡∏£‡∏î‡∏¥‡∏ï‡∏ñ‡πå",
 		"PROVINCE_ENGLISH" : "Uttaradit",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -339,7 +339,7 @@
 	{
 		"PROVINCE_ID" : 43,
 		"CODE" : "54",
-		"PROVINCE_THAI" : "·æ√Ë",
+		"PROVINCE_THAI" : "‡πÅ‡∏û‡∏£‡πà",
 		"PROVINCE_ENGLISH" : "Phrae",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -347,7 +347,7 @@
 	{
 		"PROVINCE_ID" : 44,
 		"CODE" : "55",
-		"PROVINCE_THAI" : "πË“π",
+		"PROVINCE_THAI" : "‡∏ô‡πà‡∏≤‡∏ô",
 		"PROVINCE_ENGLISH" : "Nan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -355,7 +355,7 @@
 	{
 		"PROVINCE_ID" : 45,
 		"CODE" : "56",
-		"PROVINCE_THAI" : "æ–‡¬“",
+		"PROVINCE_THAI" : "‡∏û‡∏∞‡πÄ‡∏¢‡∏≤",
 		"PROVINCE_ENGLISH" : "Phayao",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -363,7 +363,7 @@
 	{
 		"PROVINCE_ID" : 46,
 		"CODE" : "57",
-		"PROVINCE_THAI" : "‡™’¬ß√“¬",
+		"PROVINCE_THAI" : "‡πÄ‡∏ä‡∏µ‡∏¢‡∏á‡∏£‡∏≤‡∏¢",
 		"PROVINCE_ENGLISH" : "Chiang Rai",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -371,7 +371,7 @@
 	{
 		"PROVINCE_ID" : 47,
 		"CODE" : "58",
-		"PROVINCE_THAI" : "·¡ËŒËÕß Õπ",
+		"PROVINCE_THAI" : "‡πÅ‡∏°‡πà‡∏Æ‡πà‡∏≠‡∏á‡∏™‡∏≠‡∏ô",
 		"PROVINCE_ENGLISH" : "Mae Hong Son",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -379,7 +379,7 @@
 	{
 		"PROVINCE_ID" : 48,
 		"CODE" : "60",
-		"PROVINCE_THAI" : "π§√ «√√§Ï",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏™‡∏ß‡∏£‡∏£‡∏Ñ‡πå",
 		"PROVINCE_ENGLISH" : "Nakhon Sawan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -387,7 +387,7 @@
 	{
 		"PROVINCE_ID" : 49,
 		"CODE" : "61",
-		"PROVINCE_THAI" : "Õÿ∑—¬∏“π’",
+		"PROVINCE_THAI" : "‡∏≠‡∏∏‡∏ó‡∏±‡∏¢‡∏ò‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Uthai Thani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -395,7 +395,7 @@
 	{
 		"PROVINCE_ID" : 50,
 		"CODE" : "62",
-		"PROVINCE_THAI" : "°”·æß‡æ™√",
+		"PROVINCE_THAI" : "‡∏Å‡∏≥‡πÅ‡∏û‡∏á‡πÄ‡∏û‡∏ä‡∏£",
 		"PROVINCE_ENGLISH" : "Kamphaeng Phet",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -403,7 +403,7 @@
 	{
 		"PROVINCE_ID" : 51,
 		"CODE" : "63",
-		"PROVINCE_THAI" : "µ“°",
+		"PROVINCE_THAI" : "‡∏ï‡∏≤‡∏Å",
 		"PROVINCE_ENGLISH" : "Tak",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -411,7 +411,7 @@
 	{
 		"PROVINCE_ID" : 52,
 		"CODE" : "64",
-		"PROVINCE_THAI" : " ÿ‚¢∑—¬",
+		"PROVINCE_THAI" : "‡∏™‡∏∏‡πÇ‡∏Ç‡∏ó‡∏±‡∏¢",
 		"PROVINCE_ENGLISH" : "Sukhothai",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -419,7 +419,7 @@
 	{
 		"PROVINCE_ID" : 53,
 		"CODE" : "65",
-		"PROVINCE_THAI" : "æ‘…≥ÿ‚≈°",
+		"PROVINCE_THAI" : "‡∏û‡∏¥‡∏©‡∏ì‡∏∏‡πÇ‡∏•‡∏Å",
 		"PROVINCE_ENGLISH" : "Phitsanulok",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -427,7 +427,7 @@
 	{
 		"PROVINCE_ID" : 54,
 		"CODE" : "66",
-		"PROVINCE_THAI" : "æ‘®‘µ√",
+		"PROVINCE_THAI" : "‡∏û‡∏¥‡∏à‡∏¥‡∏ï‡∏£",
 		"PROVINCE_ENGLISH" : "Phichit",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -435,7 +435,7 @@
 	{
 		"PROVINCE_ID" : 55,
 		"CODE" : "67",
-		"PROVINCE_THAI" : "‡æ™√∫Ÿ√≥Ï",
+		"PROVINCE_THAI" : "‡πÄ‡∏û‡∏ä‡∏£‡∏ö‡∏π‡∏£‡∏ì‡πå",
 		"PROVINCE_ENGLISH" : "Phetchabun",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -443,7 +443,7 @@
 	{
 		"PROVINCE_ID" : 56,
 		"CODE" : "70",
-		"PROVINCE_THAI" : "√“™∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏£‡∏≤‡∏ä‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Ratchaburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -451,7 +451,7 @@
 	{
 		"PROVINCE_ID" : 57,
 		"CODE" : "71",
-		"PROVINCE_THAI" : "°“≠®π∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏Å‡∏≤‡∏ç‡∏à‡∏ô‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Kanchanaburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -459,7 +459,7 @@
 	{
 		"PROVINCE_ID" : 58,
 		"CODE" : "72",
-		"PROVINCE_THAI" : " ÿæ√√≥∫ÿ√’",
+		"PROVINCE_THAI" : "‡∏™‡∏∏‡∏û‡∏£‡∏£‡∏ì‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Suphan Buri",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -467,7 +467,7 @@
 	{
 		"PROVINCE_ID" : 59,
 		"CODE" : "73",
-		"PROVINCE_THAI" : "π§√ª∞¡",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏õ‡∏ê‡∏°",
 		"PROVINCE_ENGLISH" : "Nakhon Pathom",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -475,7 +475,7 @@
 	{
 		"PROVINCE_ID" : 60,
 		"CODE" : "74",
-		"PROVINCE_THAI" : " ¡ÿ∑√ “§√",
+		"PROVINCE_THAI" : "‡∏™‡∏°‡∏∏‡∏ó‡∏£‡∏™‡∏≤‡∏Ñ‡∏£",
 		"PROVINCE_ENGLISH" : "Samut Sakhon",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -483,7 +483,7 @@
 	{
 		"PROVINCE_ID" : 61,
 		"CODE" : "75",
-		"PROVINCE_THAI" : " ¡ÿ∑√ ß§√“¡",
+		"PROVINCE_THAI" : "‡∏™‡∏°‡∏∏‡∏ó‡∏£‡∏™‡∏á‡∏Ñ‡∏£‡∏≤‡∏°",
 		"PROVINCE_ENGLISH" : "Samut Songkhram",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -491,7 +491,7 @@
 	{
 		"PROVINCE_ID" : 62,
 		"CODE" : "76",
-		"PROVINCE_THAI" : "‡æ™√∫ÿ√’",
+		"PROVINCE_THAI" : "‡πÄ‡∏û‡∏ä‡∏£‡∏ö‡∏∏‡∏£‡∏µ",
 		"PROVINCE_ENGLISH" : "Phetchaburi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -499,7 +499,7 @@
 	{
 		"PROVINCE_ID" : 63,
 		"CODE" : "77",
-		"PROVINCE_THAI" : "ª√–®«∫§’√’¢—π∏Ï",
+		"PROVINCE_THAI" : "‡∏õ‡∏£‡∏∞‡∏à‡∏ß‡∏ö‡∏Ñ‡∏µ‡∏£‡∏µ‡∏Ç‡∏±‡∏ô‡∏ò‡πå",
 		"PROVINCE_ENGLISH" : "Prachuap Khiri Khan",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -507,7 +507,7 @@
 	{
 		"PROVINCE_ID" : 64,
 		"CODE" : "80",
-		"PROVINCE_THAI" : "π§√»√’∏√√¡√“™",
+		"PROVINCE_THAI" : "‡∏ô‡∏Ñ‡∏£‡∏®‡∏£‡∏µ‡∏ò‡∏£‡∏£‡∏°‡∏£‡∏≤‡∏ä",
 		"PROVINCE_ENGLISH" : "Nakhon Si Thammarat",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -515,7 +515,7 @@
 	{
 		"PROVINCE_ID" : 65,
 		"CODE" : "81",
-		"PROVINCE_THAI" : "°√–∫’Ë",
+		"PROVINCE_THAI" : "‡∏Å‡∏£‡∏∞‡∏ö‡∏µ‡πà",
 		"PROVINCE_ENGLISH" : "Krabi",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -523,7 +523,7 @@
 	{
 		"PROVINCE_ID" : 66,
 		"CODE" : "82",
-		"PROVINCE_THAI" : "æ—ßß“",
+		"PROVINCE_THAI" : "‡∏û‡∏±‡∏á‡∏á‡∏≤",
 		"PROVINCE_ENGLISH" : "Phang-nga",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -531,7 +531,7 @@
 	{
 		"PROVINCE_ID" : 67,
 		"CODE" : "83",
-		"PROVINCE_THAI" : "¿Ÿ‡°Áµ",
+		"PROVINCE_THAI" : "‡∏†‡∏π‡πÄ‡∏Å‡πá‡∏ï",
 		"PROVINCE_ENGLISH" : "Phuket",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -539,7 +539,7 @@
 	{
 		"PROVINCE_ID" : 68,
 		"CODE" : "84",
-		"PROVINCE_THAI" : " ÿ√“…Æ√Ï∏“π’",
+		"PROVINCE_THAI" : "‡∏™‡∏∏‡∏£‡∏≤‡∏©‡∏é‡∏£‡πå‡∏ò‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Surat Thani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -547,7 +547,7 @@
 	{
 		"PROVINCE_ID" : 69,
 		"CODE" : "85",
-		"PROVINCE_THAI" : "√–πÕß",
+		"PROVINCE_THAI" : "‡∏£‡∏∞‡∏ô‡∏≠‡∏á",
 		"PROVINCE_ENGLISH" : "Ranong",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -555,7 +555,7 @@
 	{
 		"PROVINCE_ID" : 70,
 		"CODE" : "86",
-		"PROVINCE_THAI" : "™ÿ¡æ√",
+		"PROVINCE_THAI" : "‡∏ä‡∏∏‡∏°‡∏û‡∏£",
 		"PROVINCE_ENGLISH" : "Chumphon",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -563,7 +563,7 @@
 	{
 		"PROVINCE_ID" : 71,
 		"CODE" : "90",
-		"PROVINCE_THAI" : " ß¢≈“",
+		"PROVINCE_THAI" : "‡∏™‡∏á‡∏Ç‡∏•‡∏≤",
 		"PROVINCE_ENGLISH" : "Songkhla",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -571,7 +571,7 @@
 	{
 		"PROVINCE_ID" : 72,
 		"CODE" : "91",
-		"PROVINCE_THAI" : " µŸ≈",
+		"PROVINCE_THAI" : "‡∏™‡∏ï‡∏π‡∏•",
 		"PROVINCE_ENGLISH" : "Satun",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -579,7 +579,7 @@
 	{
 		"PROVINCE_ID" : 73,
 		"CODE" : "92",
-		"PROVINCE_THAI" : "µ√—ß",
+		"PROVINCE_THAI" : "‡∏ï‡∏£‡∏±‡∏á",
 		"PROVINCE_ENGLISH" : "Trang",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -587,7 +587,7 @@
 	{
 		"PROVINCE_ID" : 74,
 		"CODE" : "93",
-		"PROVINCE_THAI" : "æ—∑≈ÿß",
+		"PROVINCE_THAI" : "‡∏û‡∏±‡∏ó‡∏•‡∏∏‡∏á",
 		"PROVINCE_ENGLISH" : "Phatthalung",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -595,7 +595,7 @@
 	{
 		"PROVINCE_ID" : 75,
 		"CODE" : "94",
-		"PROVINCE_THAI" : "ª—µµ“π’",
+		"PROVINCE_THAI" : "‡∏õ‡∏±‡∏ï‡∏ï‡∏≤‡∏ô‡∏µ",
 		"PROVINCE_ENGLISH" : "Pattani",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -603,7 +603,7 @@
 	{
 		"PROVINCE_ID" : 76,
 		"CODE" : "95",
-		"PROVINCE_THAI" : "¬–≈“",
+		"PROVINCE_THAI" : "‡∏¢‡∏∞‡∏•‡∏≤",
 		"PROVINCE_ENGLISH" : "Yala",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
@@ -611,7 +611,7 @@
 	{
 		"PROVINCE_ID" : 77,
 		"CODE" : "96",
-		"PROVINCE_THAI" : "π√“∏‘«“ ",
+		"PROVINCE_THAI" : "‡∏ô‡∏£‡∏≤‡∏ò‡∏¥‡∏ß‡∏≤‡∏™",
 		"PROVINCE_ENGLISH" : "Narathiwat",
 		"UPDATED_AT" : "2024-10-22T08:21:23.000Z",
 		"CREATED_AT" : "2024-10-22T08:21:23.000Z"
