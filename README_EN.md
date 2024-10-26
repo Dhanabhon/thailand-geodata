@@ -26,8 +26,8 @@ The Thailand Geodata dataset includes multiple formats: CSV, JSON, and SQL, each
      - `PROVINCE_ID`: Unique ID for each province
      - `CODE`: Unique code for each province
      - `PROVINCE_THAI` and `PROVINCE_ENGLISH`: Province names in Thai and English
-     - `UPDATED_AT`: Timestamp indicating when the record was created
-     - `CREATED_AT`: Timestamp indicating when the record was last updated
+     - `UPDATED_AT`: Timestamp indicating when the record was last updated
+     - `CREATED_AT`: Timestamp indicating when the record was created
   
 **2. JSON Files**
   - The JSON structure is hierarchical, making it easy to access data at each level:
@@ -67,7 +67,6 @@ Thank you for being so interested in contributing to Thailand Geodata! Here’s 
 
 1. **Report Issues**: If you find any errors or have suggestions, open an issue with details.
 2. **Make Changes**: Fork the repo, create a branch, make your updates, and open a pull request (PR) to the main branch. Please follow existing data formats.
-3. **Respectful Collaboration**: Maintain constructive and respectful communication.
 
 By contributing, you agree to license your contributions under the same terms as this project.
 
