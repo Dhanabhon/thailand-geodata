@@ -7,6 +7,7 @@ class ThailandGeodataApp {
         };
         this.currentLanguage = 'thai';
         this.selectedProvince = null;
+        this.selectedDistrict = null;
         this.filteredProvinces = [];
 
         this.init();
@@ -73,7 +74,10 @@ class ThailandGeodataApp {
 
         // Close districts section when clicking outside
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.province-card') && !e.target.closest('#districts-section')) {
+            if (!e.target.closest('.province-card') &&
+                !e.target.closest('.featured-card') &&
+                !e.target.closest('#districts-section') &&
+                !e.target.closest('#sub-districts-section')) {
                 this.closeDistrictsSection();
             }
         });
@@ -88,6 +92,9 @@ class ThailandGeodataApp {
         this.renderProvinces();
         if (this.selectedProvince) {
             this.showProvinceDetails(this.selectedProvince);
+        }
+        if (this.selectedDistrict) {
+            this.showSubDistrictsForDistrict(this.selectedDistrict);
         }
     }
 
@@ -265,7 +272,7 @@ class ThailandGeodataApp {
             const altName = this.currentLanguage === 'thai' ? district.DISTRICT_ENGLISH : district.DISTRICT_THAI;
 
             return `
-                <div class="district-item">
+                <div class="district-item" data-district-id="${district.DISTRICT_ID}">
                     <div class="district-name">${name}</div>
                     <div class="district-alt-name">${altName}</div>
                     <div class="district-code">Code: ${district.CODE}</div>
@@ -273,15 +280,80 @@ class ThailandGeodataApp {
             `;
         }).join('');
 
+        // Add click event listeners to district items
+        document.querySelectorAll('.district-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const districtId = parseInt(item.dataset.districtId);
+                const district = this.data.districts.find(d => d.DISTRICT_ID === districtId);
+                this.showSubDistrictsForDistrict(district);
+            });
+        });
+
         districtsSection.style.display = 'block';
+    }
+
+    showSubDistrictsForDistrict(district) {
+        this.selectedDistrict = district;
+
+        // Highlight selected district
+        document.querySelectorAll('.district-item').forEach(item => {
+            item.classList.remove('selected');
+        });
+        document.querySelector(`[data-district-id="${district.DISTRICT_ID}"]`).classList.add('selected');
+
+        const subDistricts = this.data.subDistricts.filter(sd => sd.DISTRICT_ID === district.DISTRICT_ID);
+        const subDistrictsSection = document.getElementById('sub-districts-section');
+        const subDistrictsList = document.getElementById('sub-districts-list');
+
+        if (subDistricts.length === 0) {
+            subDistrictsSection.style.display = 'none';
+            return;
+        }
+
+        const districtName = this.currentLanguage === 'thai' ? district.DISTRICT_THAI : district.DISTRICT_ENGLISH;
+
+        // Update header info
+        document.querySelector('.sub-district-info').textContent =
+            `Sub-districts in ${districtName} (${subDistricts.length} total)`;
+
+        // Add count display
+        const countHtml = `
+            <div class="sub-district-count">
+                <div class="count-number">${subDistricts.length}</div>
+                <div class="count-label">Sub-districts in ${districtName}</div>
+            </div>
+        `;
+
+        subDistrictsList.innerHTML = countHtml + subDistricts.map(subDistrict => {
+            const name = this.currentLanguage === 'thai' ? subDistrict.SUB_DISTRICT_THAI : subDistrict.SUB_DISTRICT_ENGLISH;
+            const altName = this.currentLanguage === 'thai' ? subDistrict.SUB_DISTRICT_ENGLISH : subDistrict.SUB_DISTRICT_THAI;
+
+            return `
+                <div class="sub-district-item">
+                    <div class="sub-district-name">${name}</div>
+                    <div class="sub-district-alt-name">${altName}</div>
+                    <div class="sub-district-code">Code: ${subDistrict.CODE}</div>
+                </div>
+            `;
+        }).join('');
+
+        subDistrictsSection.style.display = 'block';
+
+        // Scroll to sub-districts section on mobile
+        if (window.innerWidth <= 768) {
+            subDistrictsSection.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 
     closeDistrictsSection() {
         document.getElementById('districts-section').style.display = 'none';
+        document.getElementById('sub-districts-section').style.display = 'none';
         document.querySelectorAll('.province-card, .featured-card').forEach(card => {
             card.classList.remove('selected');
         });
         this.selectedProvince = null;
+        this.selectedDistrict = null;
     }
 
     showLoading(show) {

@@ -350,6 +350,106 @@ header i {
     font-size: 0.8rem;
 }
 
+.district-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.district-item:hover {
+    background: #e8ecff;
+    transform: translateX(5px);
+}
+
+.district-item.selected {
+    background: #e8ecff;
+    border-left-color: #4caf50;
+}
+
+/* Sub-districts Styling */
+.sub-district-header {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sub-district-info {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+#sub-districts-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+#sub-districts-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sub-districts-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#sub-districts-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 3px;
+}
+
+.sub-district-item {
+    background: #f0f8f0;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border-left: 3px solid #4caf50;
+    transition: all 0.3s ease;
+}
+
+.sub-district-item:hover {
+    background: #e8f5e8;
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.15);
+}
+
+.sub-district-name {
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 3px;
+}
+
+.sub-district-alt-name {
+    color: #4caf50;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.sub-district-code {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.sub-district-count {
+    text-align: center;
+    padding: 15px;
+    background: #f0f8f0;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e0f2e0;
+}
+
+.sub-district-count .count-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 5px;
+}
+
+.sub-district-count .count-label {
+    color: #4caf50;
+    font-size: 0.9rem;
+}
+
 /* Featured Section */
 .featured-section {
     background: white;
