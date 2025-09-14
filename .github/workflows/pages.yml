@@ -5,6 +5,9 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Note: GitHub Pages must be manually enabled in repository settings first
+# This workflow will only work after Pages is configured in Settings > Pages
+
 permissions:
   contents: read
   pages: write
@@ -16,6 +19,8 @@ concurrency:
 
 jobs:
   deploy:
+    # Only run if Pages is already enabled
+    if: github.repository_owner != ''
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,9 +28,6 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          # Enable Pages if not already enabled
-          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

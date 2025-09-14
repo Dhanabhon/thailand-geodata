@@ -4,29 +4,36 @@
 
 ### Step 1: Enable GitHub Pages Manually
 
-**Important:** You must enable GitHub Pages in your repository settings first, before the workflow can deploy.
+**⚠️ IMPORTANT:** The GitHub Action workflow cannot automatically enable Pages due to permissions. You **MUST** enable it manually first:
 
 1. **Go to your GitHub repository**
 2. **Click on "Settings" tab**
 3. **Scroll down to "Pages" section (left sidebar)**
 4. **Under "Source", select:**
-   - Source: "Deploy from a branch"
-   - Branch: "main"
-   - Folder: "/ (root)"
+   - Source: "GitHub Actions" (recommended)
+   - OR "Deploy from a branch" → Branch: "main" → Folder: "/ (root)"
 5. **Click "Save"**
 
-### Step 2: Wait for Automatic Deployment
+### Step 2: Access Your Web App
 
-After enabling Pages and pushing your code:
-- The GitHub Action will automatically run
-- It will deploy the web app from `examples/web-app/`
-- Your app will be available at: `https://[username].github.io/thailand-geodata/examples/web-app/`
+After enabling Pages, your web app will be available at:
+- **Full repo:** `https://[username].github.io/thailand-geodata/examples/web-app/`
+- **If using GitHub Actions:** The workflow will deploy automatically on pushes
 
-### Step 3: Verify Deployment
+### Step 3: Troubleshooting Workflow Failures
 
-- Check the "Actions" tab to see deployment status
-- Look for the green checkmark ✅
-- Visit your live URL once deployment completes
+If you see errors like "Resource not accessible by integration":
+
+**✅ Solution 1: Use GitHub Actions Source**
+1. In Settings > Pages, select "GitHub Actions" as source
+2. The `static.yml` workflow will deploy the entire repo
+3. Access app at: `https://[username].github.io/thailand-geodata/examples/web-app/`
+
+**✅ Solution 2: Use Branch Deployment**
+1. In Settings > Pages, select "Deploy from a branch"
+2. Choose "main" branch and "/ (root)" folder
+3. No workflow needed - GitHub will serve files directly
+4. Access app at: `https://[username].github.io/thailand-geodata/examples/web-app/`
 
 ---
 
