@@ -18,6 +18,30 @@ Thailand Geodata is an open dataset that provides comprehensive geographic infor
 
 Thailand Geodata is designed to support developers, researchers, and the general public, enabling diverse uses such as application development, regional mapping, and spatial analysis of Thailand.
 
+## 🚀 Examples and Live Demo
+
+### 🌐 **Interactive Web App** ⭐ **NEW!**
+**Try it now:** [GitHub Pages Demo](https://[username].github.io/thailand-geodata/examples/web-app/)
+
+- 📊 Real-time statistics and search functionality
+- 🗺️ Interactive province explorer with detailed information
+- 📱 Mobile-responsive design for all devices
+- ⚡ Runs directly on GitHub Pages - no installation required
+
+### 💻 **Multi-Language Code Examples**
+Ready-to-use examples in [examples/](./examples/):
+- **Python** - Data analysis with pandas
+- **JavaScript/Node.js** - For web apps and APIs
+- **Java** - With Maven and JSON processing
+- **Go** - High performance with built-in JSON handling
+- **PHP** - For websites with CSV export functionality
+- **C#** - .NET 6 with async/await patterns
+
+Each example includes:
+- ✅ Detailed setup and usage documentation
+- ✅ Ready-to-run code with proper error handling
+- ✅ Search, filtering, and data display features
+
 ## File Structure and Data Fields
 The Thailand Geodata dataset includes multiple formats: CSV, JSON, and SQL, each with structured fields to facilitate easy use and integration. Here’s an overview of the main fields in each file format:
 
