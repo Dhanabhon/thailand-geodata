@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand Geodata Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-map-marked-alt"></i> Thailand Geodata Explorer</h1>
+            <p>Interactive explorer for Thailand's provinces, districts, and sub-districts</p>
+        </header>
+
+        <div class="stats-section">
+            <div class="stat-card">
+                <i class="fas fa-city"></i>
+                <div class="stat-number" id="provinces-count">-</div>
+                <div class="stat-label">Provinces</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map"></i>
+                <div class="stat-number" id="districts-count">-</div>
+                <div class="stat-label">Districts</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-location-dot"></i>
+                <div class="stat-number" id="sub-districts-count">-</div>
+                <div class="stat-label">Sub-districts</div>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Search provinces by name (Thai or English)...">
+                <div class="language-toggle">
+                    <button id="lang-thai" class="lang-btn active">ไทย</button>
+                    <button id="lang-english" class="lang-btn">English</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="provinces-section">
+                <h2><i class="fas fa-list"></i> Provinces</h2>
+                <div id="provinces-list" class="provinces-grid">
+                    <!-- Provinces will be loaded here -->
+                </div>
+            </div>
+
+            <div class="details-section">
+                <div id="province-details" class="details-card">
+                    <h3><i class="fas fa-info-circle"></i> Province Details</h3>
+                    <p class="placeholder-text">Select a province to see its details and districts</p>
+                </div>
+
+                <div id="districts-section" class="details-card" style="display: none;">
+                    <h3><i class="fas fa-building"></i> Districts</h3>
+                    <div id="districts-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="featured-section">
+            <h2><i class="fas fa-star"></i> Featured Provinces</h2>
+            <div id="featured-provinces" class="featured-grid">
+                <!-- Featured provinces will be loaded here -->
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <p>
+                    <i class="fas fa-database"></i>
+                    Data Source: Official Thailand Government Geodata
+                </p>
+                <p>
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/your-repo/thailand-geodata" target="_blank">
+                        View on GitHub
+                    </a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="loading" class="loading">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <p>Loading Thailand geodata...</p>
+    </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

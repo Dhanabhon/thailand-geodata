@@ -1,0 +1,16 @@
+{
+  "name": "thailand-geodata-example",
+  "version": "1.0.0",
+  "description": "Thailand Geodata JavaScript/Node.js Example",
+  "main": "thailand-geodata.js",
+  "scripts": {
+    "start": "node thailand-geodata.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["thailand", "geodata", "provinces", "districts"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
