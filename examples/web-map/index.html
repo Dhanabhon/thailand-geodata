@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thailand Geodata Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page">
+        <header class="page-header">
+            <div class="title-block">
+                <h1><i class="fas fa-map-location-dot"></i> Thailand Geodata Map</h1>
+                <p>Click a province on the map to see its districts, sub-districts, and postal codes.</p>
+            </div>
+            <div class="header-actions">
+                <div class="language-toggle">
+                    <button id="lang-thai" class="lang-btn active" type="button">ไทย</button>
+                    <button id="lang-english" class="lang-btn" type="button">English</button>
+                </div>
+                <button id="reset-view" class="ghost-btn" type="button">
+                    <i class="fas fa-arrows-rotate"></i> Reset view
+                </button>
+            </div>
+        </header>
+
+        <section class="stats-row" aria-label="Dataset statistics">
+            <div class="stat">
+                <span class="stat-label">Provinces</span>
+                <span class="stat-value" id="stat-provinces">—</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Districts</span>
+                <span class="stat-value" id="stat-districts">—</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Sub-districts</span>
+                <span class="stat-value" id="stat-sub-districts">—</span>
+            </div>
+            <div class="stat legend-stat">
+                <span class="stat-label">Districts per province</span>
+                <div class="legend-bar" id="legend-bar"></div>
+            </div>
+        </section>
+
+        <main class="map-layout">
+            <div class="map-wrap">
+                <div id="map" role="application" aria-label="Map of Thailand"></div>
+                <div id="map-status" class="map-status" hidden></div>
+            </div>
+
+            <aside class="info-panel" aria-live="polite">
+                <div id="info-default" class="info-default">
+                    <i class="fas fa-hand-pointer"></i>
+                    <h2>Pick a province</h2>
+                    <p>Hover to preview, click to drill into districts and sub-districts. Postal codes are listed for each sub-district.</p>
+                </div>
+
+                <div id="info-detail" class="info-detail" hidden>
+                    <header class="info-detail-header">
+                        <span class="info-province-code" id="info-code">—</span>
+                        <h2 id="info-name-primary">—</h2>
+                        <p class="info-name-alt" id="info-name-alt">—</p>
+                    </header>
+
+                    <div class="info-stats">
+                        <div class="info-stat">
+                            <span class="info-stat-value" id="info-district-count">—</span>
+                            <span class="info-stat-label">districts</span>
+                        </div>
+                        <div class="info-stat">
+                            <span class="info-stat-value" id="info-sub-count">—</span>
+                            <span class="info-stat-label">sub-districts</span>
+                        </div>
+                        <div class="info-stat">
+                            <span class="info-stat-value" id="info-postal-count">—</span>
+                            <span class="info-stat-label">postal codes</span>
+                        </div>
+                    </div>
+
+                    <section class="info-section">
+                        <h3><i class="fas fa-envelope"></i> Postal codes</h3>
+                        <div class="postal-chip-list" id="info-postal-list"></div>
+                    </section>
+
+                    <section class="info-section">
+                        <h3><i class="fas fa-building"></i> Districts</h3>
+                        <ul class="district-list" id="info-district-list"></ul>
+                    </section>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="page-footer">
+            <p>
+                <i class="fas fa-database"></i>
+                Province boundaries:
+                <a href="https://github.com/apisit/thailand.json" target="_blank" rel="noopener">apisit/thailand.json</a>
+                · Geodata: this repository
+            </p>
+        </footer>
+
+        <div id="loading" class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading map and geodata…</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>

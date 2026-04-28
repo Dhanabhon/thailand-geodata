@@ -20,9 +20,18 @@ Replace `[username]` with your GitHub username.
 - Language toggle (Thai/English)
 - Case-insensitive search
 
+### 📮 **Postal Code Lookup**
+- Find the postal code of any sub-district by Thai or English name
+- Reverse-lookup: enter a 5-digit postal code (or prefix) to list all matching sub-districts
+- Results show the full hierarchy: sub-district → district → province
+- Click a result to jump straight to its province + district details and highlight the row
+- Postal code is also displayed inline on every sub-district in the explorer
+- Debounced input, capped result list with overflow note for fast feedback
+
 ### 🗺️ **Interactive Province Explorer**
 - Click any province to view detailed information
 - See all districts within a selected province
+- Drill down further to view all sub-districts (with postal codes) for any district
 - Visual highlighting of selected items
 - Responsive grid layout
 
@@ -102,12 +111,17 @@ Replace `[username]` with your GitHub username.
 #### `ThailandGeodataApp` Class
 ```javascript
 class ThailandGeodataApp {
-    constructor()           // Initialize app
-    async loadData()        // Fetch JSON data
-    handleSearch(query)     // Filter provinces
-    renderProvinces()       // Display province grid
-    showProvinceDetails()   // Show selected province info
-    setLanguage(lang)       // Switch Thai/English
+    constructor()                    // Initialize app
+    async loadData()                 // Fetch JSON data
+    handleSearch(query)              // Filter provinces
+    renderProvinces()                // Display province grid
+    showProvinceDetails(province)    // Show selected province info
+    showSubDistrictsForDistrict(d)   // Drill down into a district
+    schedulePostalSearch(query)      // Debounce postal lookup
+    runPostalSearch(query)           // Match by name or postal code
+    findSubDistricts(query)          // Lookup helper
+    openHierarchyForSubDistrict(id)  // Jump to result in main panel
+    setLanguage(lang)                // Switch Thai/English
 }
 ```
 
@@ -153,6 +167,25 @@ The app consumes the following JSON endpoints:
 }
 ```
 
+### **Sub-districts** (`/json/sub_districts.json`)
+```json
+{
+  "sub_districts": [
+    {
+      "SUB_DISTRICT_ID": 1,
+      "DISTRICT_ID": 1,
+      "CODE": "01",
+      "SUB_DISTRICT_CODE": "100101",
+      "SUB_DISTRICT_THAI": "พระบรมมหาราชวัง",
+      "SUB_DISTRICT_ENGLISH": "Phra Borom Maha Ratchawang",
+      "LATITUDE": "13.751",
+      "LONGITUDE": "100.492",
+      "POSTAL_CODE": "10200"
+    }
+  ]
+}
+```
+
 ## 🎯 Usage Examples
 
 ### **Basic Search**
@@ -160,11 +193,19 @@ The app consumes the following JSON endpoints:
 2. See filtered results in real-time
 3. Toggle between Thai/English names
 
+### **Postal Code Lookup**
+1. Scroll to the "Find Postal Code" section near the top
+2. Type a sub-district name in Thai (e.g. `บางรัก`) or English (e.g. `Bang Rak`)
+3. Or enter a 5-digit postal code such as `10500` to list every matching sub-district
+4. Each result shows the postal code, district, and province
+5. Click any result to jump to the full hierarchy in the explorer panel
+
 ### **Province Details**
 1. Click any province card
 2. View detailed information in the sidebar
 3. See all districts for that province
-4. Province gets highlighted across all sections
+4. Click a district to see its sub-districts with postal codes
+5. Province gets highlighted across all sections
 
 ### **Featured Exploration**
 1. Scroll to "Featured Provinces" section

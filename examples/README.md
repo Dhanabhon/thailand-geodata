@@ -4,13 +4,22 @@ This directory contains example projects demonstrating how to use the Thailand g
 
 ## Available Examples
 
-### 🌐 [Interactive Web App](./web-app/) ⭐ **NEW!**
-**Live Demo:** [GitHub Pages](https://[username].github.io/thailand-geodata/examples/web-app/)
+### 🌐 [Interactive Web App](./web-app/)
+**Live Demo:** [GitHub Pages](https://dhanabhon.github.io/thailand-geodata/examples/web-app/)
 **Requirements:** Modern web browser (no installation needed)
 - 📊 Real-time statistics and search
-- 🗺️ Interactive province explorer
+- 🗺️ Interactive province → district → sub-district drill-down
+- 📮 Postal code lookup (by sub-district name or postal code)
 - 📱 Mobile-responsive design
 - ⚡ Runs directly on GitHub Pages
+
+### 🗺️ [Interactive Map](./web-map/) ⭐ **NEW!**
+**Live Demo:** [GitHub Pages](https://dhanabhon.github.io/thailand-geodata/examples/web-map/)
+**Requirements:** Modern web browser (no installation needed)
+- 🎨 Choropleth map of all 77 provinces, colored by district count
+- 🖱️ Click a province to see districts, sub-districts, and every postal code
+- 🌐 Thai/English tooltips and labels
+- 🧭 Powered by Leaflet + `apisit/thailand.json` boundaries
 
 ### 🐍 [Python](./python/)
 **Requirements:** Python 3.6+, pandas
