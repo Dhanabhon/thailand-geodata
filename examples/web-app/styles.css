@@ -147,6 +147,299 @@ header i {
     background: #e0e0e0;
 }
 
+/* Postal Code Lookup Section */
+.postal-section {
+    background: white;
+    padding: 28px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.postal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 18px;
+}
+
+.postal-header h2 {
+    font-size: 1.6rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.postal-header h2 i {
+    color: #ff8a65;
+}
+
+.postal-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.postal-search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f8f9ff;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.postal-search-container:focus-within {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.18);
+}
+
+.postal-search-container i.fa-magnifying-glass {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+#postal-search-input {
+    width: 100%;
+    padding: 14px 50px 14px 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    border-radius: 16px;
+}
+
+.postal-clear {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #eef0ff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #667eea;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.postal-clear:hover {
+    background: #667eea;
+    color: white;
+}
+
+.postal-results {
+    margin-top: 18px;
+}
+
+.postal-empty {
+    text-align: center;
+    padding: 28px 16px;
+    color: #888;
+    background: #fafbff;
+    border-radius: 14px;
+    border: 1px dashed #e1e6ff;
+}
+
+.postal-empty i {
+    font-size: 1.6rem;
+    color: #b8c0e8;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.postal-no-results i {
+    color: #ef9a9a;
+}
+
+.postal-summary {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.postal-result-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.postal-result-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.postal-result-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.postal-result-list::-webkit-scrollbar-thumb {
+    background: #ff8a65;
+    border-radius: 3px;
+}
+
+.postal-result-item {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+    background: #f8f9ff;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border-left: 4px solid #ff8a65;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.postal-result-item:hover,
+.postal-result-item:focus-visible {
+    background: #fff3ee;
+    transform: translateX(3px);
+    box-shadow: 0 4px 14px rgba(255, 138, 101, 0.18);
+    outline: none;
+}
+
+.postal-result-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.postal-result-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.postal-result-alt {
+    color: #666;
+    font-size: 0.88rem;
+    margin-top: 2px;
+}
+
+.postal-result-path {
+    color: #777;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.postal-result-path i {
+    color: #667eea;
+}
+
+.postal-divider {
+    color: #c5c9e8;
+}
+
+.postal-code-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff8a65 0%, #f4511e 100%);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    min-width: 84px;
+    box-shadow: 0 4px 12px rgba(244, 81, 30, 0.25);
+}
+
+.postal-code-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+
+.postal-code-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.postal-overflow {
+    margin-top: 10px;
+    color: #888;
+    font-size: 0.85rem;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Sub-district row layout (postal code badge alongside name) */
+.sub-district-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.sub-district-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.sub-district-postal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    padding: 6px 10px;
+    min-width: 72px;
+}
+
+.sub-district-postal-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4caf50;
+    font-weight: 600;
+}
+
+.sub-district-postal-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2e7d32;
+    font-variant-numeric: tabular-nums;
+}
+
+.sub-district-item.highlight-flash {
+    animation: postal-flash 1.4s ease-out;
+}
+
+@keyframes postal-flash {
+    0% {
+        background: #fff3ee;
+        box-shadow: 0 0 0 4px rgba(255, 138, 101, 0.35);
+    }
+    100% {
+        background: #f0f8f0;
+        box-shadow: none;
+    }
+}
+
 /* Main Content */
 .main-content {
     display: grid;
@@ -707,8 +1000,27 @@ footer {
 
     .provinces-section,
     .details-card,
-    .featured-section {
+    .featured-section,
+    .postal-section {
         padding: 20px;
+    }
+
+    .postal-result-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .postal-code-badge {
+        align-self: flex-end;
+    }
+
+    .sub-district-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sub-district-postal {
+        align-self: flex-end;
     }
 
     .toast {

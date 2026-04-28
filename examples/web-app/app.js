@@ -9,6 +9,10 @@ class ThailandGeodataApp {
         this.selectedProvince = null;
         this.selectedDistrict = null;
         this.filteredProvinces = [];
+        this.districtById = new Map();
+        this.provinceById = new Map();
+        this.postalSearchTimer = null;
+        this.postalResultLimit = 50;
 
         this.init();
     }
@@ -53,12 +57,21 @@ class ThailandGeodataApp {
         this.data.subDistricts = subDistrictsData.sub_districts || [];
 
         this.filteredProvinces = [...this.data.provinces];
+
+        this.provinceById = new Map(
+            this.data.provinces.map(p => [p.PROVINCE_ID, p])
+        );
+        this.districtById = new Map(
+            this.data.districts.map(d => [d.DISTRICT_ID, d])
+        );
     }
 
     setupEventListeners() {
         const searchInput = document.getElementById('search-input');
         const langThai = document.getElementById('lang-thai');
         const langEnglish = document.getElementById('lang-english');
+        const postalInput = document.getElementById('postal-search-input');
+        const postalClear = document.getElementById('postal-clear');
 
         searchInput.addEventListener('input', (e) => {
             this.handleSearch(e.target.value);
@@ -72,12 +85,23 @@ class ThailandGeodataApp {
             this.setLanguage('english');
         });
 
+        postalInput.addEventListener('input', (e) => {
+            this.schedulePostalSearch(e.target.value);
+        });
+
+        postalClear.addEventListener('click', () => {
+            postalInput.value = '';
+            postalInput.focus();
+            this.runPostalSearch('');
+        });
+
         // Close districts section when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.province-card') &&
                 !e.target.closest('.featured-card') &&
                 !e.target.closest('#districts-section') &&
-                !e.target.closest('#sub-districts-section')) {
+                !e.target.closest('#sub-districts-section') &&
+                !e.target.closest('.postal-section')) {
                 this.closeDistrictsSection();
             }
         });
@@ -96,6 +120,166 @@ class ThailandGeodataApp {
         if (this.selectedDistrict) {
             this.showSubDistrictsForDistrict(this.selectedDistrict);
         }
+
+        const postalInput = document.getElementById('postal-search-input');
+        if (postalInput && postalInput.value.trim()) {
+            this.runPostalSearch(postalInput.value);
+        }
+    }
+
+    schedulePostalSearch(query) {
+        if (this.postalSearchTimer) {
+            clearTimeout(this.postalSearchTimer);
+        }
+        this.postalSearchTimer = setTimeout(() => {
+            this.runPostalSearch(query);
+        }, 120);
+    }
+
+    runPostalSearch(rawQuery) {
+        const query = (rawQuery || '').trim();
+        const clearBtn = document.getElementById('postal-clear');
+        const resultsContainer = document.getElementById('postal-results');
+
+        if (clearBtn) {
+            clearBtn.hidden = query.length === 0;
+        }
+
+        if (!query) {
+            resultsContainer.innerHTML = `
+                <div class="postal-empty">
+                    <i class="fas fa-location-arrow"></i>
+                    <p>Start typing to look up a postal code.</p>
+                </div>
+            `;
+            return;
+        }
+
+        const matches = this.findSubDistricts(query);
+
+        if (matches.length === 0) {
+            resultsContainer.innerHTML = `
+                <div class="postal-empty postal-no-results">
+                    <i class="fas fa-circle-exclamation"></i>
+                    <p>No sub-districts match <strong>${this.escapeHtml(query)}</strong>.</p>
+                </div>
+            `;
+            return;
+        }
+
+        const limited = matches.slice(0, this.postalResultLimit);
+        const overflow = matches.length - limited.length;
+
+        const items = limited.map(match => this.renderPostalResultItem(match)).join('');
+        const overflowNote = overflow > 0
+            ? `<p class="postal-overflow">Showing ${limited.length} of ${matches.length} matches — refine your search to narrow results.</p>`
+            : '';
+
+        resultsContainer.innerHTML = `
+            <p class="postal-summary">${matches.length} match${matches.length === 1 ? '' : 'es'} found</p>
+            <ul class="postal-result-list">${items}</ul>
+            ${overflowNote}
+        `;
+
+        resultsContainer.querySelectorAll('.postal-result-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const subId = parseInt(item.dataset.subDistrictId, 10);
+                this.openHierarchyForSubDistrict(subId);
+            });
+        });
+    }
+
+    findSubDistricts(query) {
+        const isPostal = /^\d+$/.test(query);
+        const lower = query.toLowerCase();
+
+        if (isPostal) {
+            return this.data.subDistricts.filter(sd =>
+                (sd.POSTAL_CODE || '').startsWith(query)
+            );
+        }
+
+        return this.data.subDistricts.filter(sd => {
+            const thai = (sd.SUB_DISTRICT_THAI || '').toLowerCase();
+            const english = (sd.SUB_DISTRICT_ENGLISH || '').toLowerCase();
+            return thai.includes(lower) || english.includes(lower);
+        });
+    }
+
+    renderPostalResultItem(subDistrict) {
+        const district = this.districtById.get(subDistrict.DISTRICT_ID);
+        const province = district ? this.provinceById.get(district.PROVINCE_ID) : null;
+
+        const subName = this.currentLanguage === 'thai'
+            ? subDistrict.SUB_DISTRICT_THAI
+            : subDistrict.SUB_DISTRICT_ENGLISH;
+        const subAlt = this.currentLanguage === 'thai'
+            ? subDistrict.SUB_DISTRICT_ENGLISH
+            : subDistrict.SUB_DISTRICT_THAI;
+
+        const districtName = district
+            ? (this.currentLanguage === 'thai' ? district.DISTRICT_THAI : district.DISTRICT_ENGLISH)
+            : '—';
+        const provinceName = province
+            ? (this.currentLanguage === 'thai' ? province.PROVINCE_THAI : province.PROVINCE_ENGLISH)
+            : '—';
+
+        const postalCode = subDistrict.POSTAL_CODE || '—';
+
+        return `
+            <li class="postal-result-item" data-sub-district-id="${subDistrict.SUB_DISTRICT_ID}" tabindex="0">
+                <div class="postal-result-main">
+                    <div class="postal-result-name">${this.escapeHtml(subName)}</div>
+                    <div class="postal-result-alt">${this.escapeHtml(subAlt)}</div>
+                    <div class="postal-result-path">
+                        <i class="fas fa-building"></i> ${this.escapeHtml(districtName)}
+                        <span class="postal-divider">›</span>
+                        <i class="fas fa-city"></i> ${this.escapeHtml(provinceName)}
+                    </div>
+                </div>
+                <div class="postal-code-badge">
+                    <span class="postal-code-label">Postal</span>
+                    <span class="postal-code-value">${this.escapeHtml(postalCode)}</span>
+                </div>
+            </li>
+        `;
+    }
+
+    openHierarchyForSubDistrict(subDistrictId) {
+        const subDistrict = this.data.subDistricts.find(sd => sd.SUB_DISTRICT_ID === subDistrictId);
+        if (!subDistrict) return;
+
+        const district = this.districtById.get(subDistrict.DISTRICT_ID);
+        const province = district ? this.provinceById.get(district.PROVINCE_ID) : null;
+
+        if (province) {
+            this.showProvinceDetails(province);
+        }
+        if (district) {
+            this.showSubDistrictsForDistrict(district);
+        }
+
+        const target = document.querySelector(
+            `.sub-district-item[data-sub-district-id="${subDistrictId}"]`
+        );
+        if (target) {
+            target.classList.add('highlight-flash');
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => target.classList.remove('highlight-flash'), 1600);
+        }
+    }
+
+    escapeHtml(value) {
+        return String(value).replace(/[&<>"']/g, char => {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            };
+            return map[char];
+        });
     }
 
     handleSearch(query) {
@@ -328,12 +512,21 @@ class ThailandGeodataApp {
         subDistrictsList.innerHTML = countHtml + subDistricts.map(subDistrict => {
             const name = this.currentLanguage === 'thai' ? subDistrict.SUB_DISTRICT_THAI : subDistrict.SUB_DISTRICT_ENGLISH;
             const altName = this.currentLanguage === 'thai' ? subDistrict.SUB_DISTRICT_ENGLISH : subDistrict.SUB_DISTRICT_THAI;
+            const postalCode = subDistrict.POSTAL_CODE || '—';
 
             return `
-                <div class="sub-district-item">
-                    <div class="sub-district-name">${name}</div>
-                    <div class="sub-district-alt-name">${altName}</div>
-                    <div class="sub-district-code">Code: ${subDistrict.CODE}</div>
+                <div class="sub-district-item" data-sub-district-id="${subDistrict.SUB_DISTRICT_ID}">
+                    <div class="sub-district-row">
+                        <div class="sub-district-text">
+                            <div class="sub-district-name">${this.escapeHtml(name)}</div>
+                            <div class="sub-district-alt-name">${this.escapeHtml(altName)}</div>
+                            <div class="sub-district-code">Code: ${this.escapeHtml(subDistrict.CODE)}</div>
+                        </div>
+                        <div class="sub-district-postal">
+                            <span class="sub-district-postal-label">Postal</span>
+                            <span class="sub-district-postal-value">${this.escapeHtml(postalCode)}</span>
+                        </div>
+                    </div>
                 </div>
             `;
         }).join('');

@@ -43,6 +43,33 @@
             </div>
         </div>
 
+        <section class="postal-section" aria-labelledby="postal-heading">
+            <div class="postal-header">
+                <h2 id="postal-heading"><i class="fas fa-envelope"></i> Find Postal Code</h2>
+                <p class="postal-subtitle">Search by sub-district name (Thai or English) or by 5-digit postal code</p>
+            </div>
+            <div class="postal-search-container">
+                <i class="fas fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="postal-search-input"
+                    placeholder="e.g. บางรัก, Bang Rak, or 10500"
+                    autocomplete="off"
+                    inputmode="search"
+                    aria-controls="postal-results"
+                >
+                <button id="postal-clear" class="postal-clear" type="button" aria-label="Clear search" hidden>
+                    <i class="fas fa-xmark"></i>
+                </button>
+            </div>
+            <div id="postal-results" class="postal-results" aria-live="polite">
+                <div class="postal-empty">
+                    <i class="fas fa-location-arrow"></i>
+                    <p>Start typing to look up a postal code.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="main-content">
             <div class="provinces-section">
                 <h2><i class="fas fa-list"></i> Provinces</h2>
