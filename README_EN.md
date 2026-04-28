@@ -20,13 +20,22 @@ Thailand Geodata is designed to support developers, researchers, and the general
 
 ## 🚀 Examples and Live Demo
 
-### 🌐 **Interactive Web App** ⭐ **NEW!**
-**Try it now:** [GitHub Pages Demo](https://[username].github.io/thailand-geodata/examples/web-app/)
+### 🌐 **Interactive Web App**
+**Try it now:** [GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-app/)
 
 - 📊 Real-time statistics and search functionality
-- 🗺️ Interactive province explorer with detailed information
+- 🗺️ Interactive province → district → sub-district drill-down
+- 📮 Postal code lookup by sub-district name (Thai/English) or by 5-digit postal code
 - 📱 Mobile-responsive design for all devices
 - ⚡ Runs directly on GitHub Pages - no installation required
+
+### 🗺️ **Interactive Map** ⭐ **NEW!**
+**Try it now:** [GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-map/)
+
+- 🎨 Choropleth map of all 77 provinces, colored by district count
+- 🖱️ Click any province to view its districts, sub-districts, and every postal code
+- 🌐 Thai/English tooltips and labels with one-click language toggle
+- 🧭 Powered by Leaflet + `apisit/thailand.json` boundaries
 
 ### 💻 **Multi-Language Code Examples**
 Ready-to-use examples in [examples/](./examples/):
