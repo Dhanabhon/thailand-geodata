@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thailand Postal Code Lookup</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      color: #1a202c;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.06);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    h1 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #1a202c;
+      line-height: 1.3;
+    }
+
+    .subtitle {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      color: #718096;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e2e8f0;
+      margin: 1.5rem 0;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .field:last-of-type { margin-bottom: 0; }
+
+    label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #4a5568;
+      letter-spacing: 0.01em;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 100%;
+      padding: 0.625rem 2.25rem 0.625rem 0.875rem;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: #1a202c;
+      background: #f7fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.875rem center;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      line-height: 1.4;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    }
+
+    select:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background-color: #edf2f7;
+    }
+
+    select:not(:disabled):hover {
+      border-color: #a0aec0;
+    }
+
+    /* Result area */
+    .result {
+      margin-top: 1.75rem;
+      border-radius: 12px;
+      border: 2px solid #ebf8ff;
+      background: #ebf8ff;
+      padding: 1.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .result[hidden] { display: none; }
+
+    .result-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #2b6cb0;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+
+    .postal-code {
+      font-size: 2.25rem;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: #1a365d;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1.125rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      font-family: inherit;
+      color: #fff;
+      background: #3182ce;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .copy-btn:hover { background: #2b6cb0; }
+    .copy-btn:active { transform: scale(0.97); }
+
+    .copy-btn.copied {
+      background: #38a169;
+    }
+
+    .copy-btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Loading state */
+    .loading-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #718096;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+    }
+
+    .spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid #e2e8f0;
+      border-top-color: #4299e1;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .error-msg {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #e53e3e;
+    }
+
+    /* Sub-district extra info */
+    .subdistrict-info {
+      margin-top: 0.5rem;
+      font-size: 0.8125rem;
+      color: #718096;
+    }
+
+    @media (max-width: 380px) {
+      .card { padding: 2rem 1.25rem; }
+      .postal-code { font-size: 1.875rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Thailand Postal Code Lookup</h1>
+    <p class="subtitle">ค้นหารหัสไปรษณีย์ไทย</p>
+
+    <hr class="divider">
+
+    <div id="status" class="loading-row">
+      <div class="spinner"></div>
+      Loading data...
+    </div>
+
+    <div id="selects" hidden>
+      <div class="field">
+        <label for="province">Province / จังหวัด</label>
+        <select id="province">
+          <option value="">— Select province —</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="district">District / อำเภอ</label>
+        <select id="district" disabled>
+          <option value="">— Select district —</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="subdistrict">Sub-district / ตำบล</label>
+        <select id="subdistrict" disabled>
+          <option value="">— Select sub-district —</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <div>
+        <div class="result-label">Postal code</div>
+        <div class="postal-code" id="postal-code"></div>
+      </div>
+      <button class="copy-btn" id="copy-btn" type="button">
+        <svg id="icon-copy" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg id="icon-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+          <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="copy-label">Copy</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const BASE = '../../json';
+    let provinces = [], districts = [], subDistricts = [];
+
+    const $province    = document.getElementById('province');
+    const $district    = document.getElementById('district');
+    const $subdistrict = document.getElementById('subdistrict');
+    const $result      = document.getElementById('result');
+    const $postalCode  = document.getElementById('postal-code');
+    const $copyBtn     = document.getElementById('copy-btn');
+    const $copyLabel   = document.getElementById('copy-label');
+    const $iconCopy    = document.getElementById('icon-copy');
+    const $iconCheck   = document.getElementById('icon-check');
+    const $status      = document.getElementById('status');
+    const $selects     = document.getElementById('selects');
+
+    async function init() {
+      try {
+        const [pRes, dRes, sdRes] = await Promise.all([
+          fetch(`${BASE}/provinces.json`),
+          fetch(`${BASE}/districts.json`),
+          fetch(`${BASE}/sub_districts.json`)
+        ]);
+
+        if (!pRes.ok || !dRes.ok || !sdRes.ok) throw new Error('Failed to fetch data');
+
+        const [pData, dData, sdData] = await Promise.all([
+          pRes.json(), dRes.json(), sdRes.json()
+        ]);
+
+        provinces    = pData.provinces;
+        districts    = dData.districts;
+        subDistricts = sdData.sub_districts;
+
+        provinces
+          .slice()
+          .sort((a, b) => a.PROVINCE_ENGLISH.localeCompare(b.PROVINCE_ENGLISH))
+          .forEach(p => {
+            $province.add(new Option(
+              `${p.PROVINCE_ENGLISH} / ${p.PROVINCE_THAI}`,
+              p.PROVINCE_ID
+            ));
+          });
+
+        $status.hidden = true;
+        $selects.hidden = false;
+      } catch (err) {
+        $status.innerHTML = `<span class="error-msg">Could not load data. Make sure you are running this from a local server or GitHub Pages.</span>`;
+      }
+    }
+
+    $province.addEventListener('change', () => {
+      const id = parseInt($province.value, 10);
+
+      reset($district, '— Select district —');
+      reset($subdistrict, '— Select sub-district —');
+      $district.disabled = true;
+      $subdistrict.disabled = true;
+      $result.hidden = true;
+
+      if (!id) return;
+
+      districts
+        .filter(d => d.PROVINCE_ID === id)
+        .sort((a, b) => a.DISTRICT_ENGLISH.localeCompare(b.DISTRICT_ENGLISH))
+        .forEach(d => {
+          $district.add(new Option(
+            `${d.DISTRICT_ENGLISH} / ${d.DISTRICT_THAI}`,
+            d.DISTRICT_ID
+          ));
+        });
+
+      $district.disabled = false;
+    });
+
+    $district.addEventListener('change', () => {
+      const id = parseInt($district.value, 10);
+
+      reset($subdistrict, '— Select sub-district —');
+      $subdistrict.disabled = true;
+      $result.hidden = true;
+
+      if (!id) return;
+
+      subDistricts
+        .filter(sd => sd.DISTRICT_ID === id)
+        .sort((a, b) => a.SUB_DISTRICT_ENGLISH.localeCompare(b.SUB_DISTRICT_ENGLISH))
+        .forEach(sd => {
+          const opt = new Option(
+            `${sd.SUB_DISTRICT_ENGLISH} / ${sd.SUB_DISTRICT_THAI}`,
+            sd.SUB_DISTRICT_ID
+          );
+          opt.dataset.postal = sd.POSTAL_CODE;
+          $subdistrict.add(opt);
+        });
+
+      $subdistrict.disabled = false;
+    });
+
+    $subdistrict.addEventListener('change', () => {
+      const opt = $subdistrict.options[$subdistrict.selectedIndex];
+      if (!opt || !opt.dataset.postal) {
+        $result.hidden = true;
+        return;
+      }
+      $postalCode.textContent = opt.dataset.postal;
+      $result.hidden = false;
+    });
+
+    $copyBtn.addEventListener('click', async () => {
+      const code = $postalCode.textContent;
+      try {
+        await navigator.clipboard.writeText(code);
+      } catch {
+        const el = document.createElement('textarea');
+        el.value = code;
+        el.style.position = 'fixed';
+        el.style.opacity = '0';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+      }
+      showCopied();
+    });
+
+    function reset(select, placeholder) {
+      select.innerHTML = '';
+      select.add(new Option(placeholder, ''));
+    }
+
+    function showCopied() {
+      $copyBtn.classList.add('copied');
+      $copyLabel.textContent = 'Copied!';
+      $iconCopy.style.display = 'none';
+      $iconCheck.style.display = '';
+      setTimeout(() => {
+        $copyBtn.classList.remove('copied');
+        $copyLabel.textContent = 'Copy';
+        $iconCopy.style.display = '';
+        $iconCheck.style.display = 'none';
+      }, 2000);
+    }
+
+    init();
+  </script>
+</body>
+</html>
