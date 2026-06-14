@@ -53,8 +53,6 @@
       margin-bottom: 1rem;
     }
 
-    .field:last-of-type { margin-bottom: 0; }
-
     label {
       font-size: 0.8125rem;
       font-weight: 600;
@@ -62,39 +60,136 @@
       letter-spacing: 0.01em;
     }
 
-    select {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 100%;
-      padding: 0.625rem 2.25rem 0.625rem 0.875rem;
+    /* ── Searchable combo ─────────────────────────── */
+    .combo { position: relative; }
+
+    .cb-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      background: #f7fafc;
+      transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .combo.open .cb-wrap,
+    .cb-wrap:focus-within {
+      border-color: #4299e1;
+      box-shadow: 0 0 0 3px rgba(66,153,225,0.2);
+      background: #fff;
+    }
+
+    .combo.disabled .cb-wrap {
+      background: #edf2f7;
+      cursor: not-allowed;
+    }
+
+    .cb-input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      background: transparent;
+      padding: 0.625rem 0 0.625rem 0.875rem;
       font-size: 0.9375rem;
       font-family: inherit;
       color: #1a202c;
-      background: #f7fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23718096' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.875rem center;
+      outline: none;
+      cursor: text;
+    }
+
+    .cb-input::placeholder { color: #a0aec0; }
+
+    .combo.disabled .cb-input {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .cb-icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      flex-shrink: 0;
+      color: #a0aec0;
+      border-radius: 6px;
+      margin: 2px;
+      transition: color 0.1s, background 0.1s;
+    }
+
+    .cb-clear:hover { color: #e53e3e; background: #fff5f5; }
+
+    .cb-chevron { pointer-events: auto; }
+    .combo.disabled .cb-chevron { cursor: not-allowed; }
+    .cb-chevron svg { transition: transform 0.2s; }
+    .combo.open .cb-chevron svg { transform: rotate(180deg); }
+
+    .cb-list {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: #fff;
       border: 1.5px solid #e2e8f0;
       border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      max-height: 224px;
+      overflow-y: auto;
+      list-style: none;
+      padding: 4px;
+      overscroll-behavior: contain;
+    }
+
+    .cb-opt {
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
       cursor: pointer;
-      transition: border-color 0.15s, box-shadow 0.15s;
-      line-height: 1.4;
+      font-size: 0.9375rem;
+      color: #1a202c;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    select:focus {
-      outline: none;
-      border-color: #4299e1;
-      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+    .cb-opt:hover, .cb-opt.hi { background: #ebf8ff; color: #2b6cb0; }
+
+    .cb-no-result {
+      padding: 0.625rem 0.75rem;
+      font-size: 0.875rem;
+      color: #a0aec0;
+      text-align: center;
     }
 
-    select:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      background-color: #edf2f7;
+    /* ── Reset row ────────────────────────────────── */
+    .reset-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.625rem;
     }
 
-    select:not(:disabled):hover {
-      border-color: #a0aec0;
+    .reset-row[hidden] { display: none; }
+
+    .reset-btn {
+      font-size: 0.8125rem;
+      font-family: inherit;
+      color: #a0aec0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem 0.375rem;
+      border-radius: 4px;
+      transition: color 0.1s;
     }
 
-    /* Result area */
+    .reset-btn:hover { color: #e53e3e; }
+
+    /* ── Result ───────────────────────────────────── */
     .result {
       margin-top: 1.75rem;
       border-radius: 12px;
@@ -149,14 +244,9 @@
     .copy-btn:hover { background: #2b6cb0; }
     .copy-btn:active { transform: scale(0.97); }
     .copy-btn.copied { background: #38a169; }
+    .copy-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-    .copy-btn svg {
-      width: 14px;
-      height: 14px;
-      flex-shrink: 0;
-    }
-
-    /* Status row */
+    /* ── Status ───────────────────────────────────── */
     .status-row {
       display: flex;
       align-items: center;
@@ -177,10 +267,7 @@
     }
 
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    .error-msg {
-      color: #e53e3e;
-    }
+    .error-msg { color: #e53e3e; }
 
     @media (max-width: 380px) {
       .card { padding: 2rem 1.25rem; }
@@ -189,222 +276,456 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Thailand Postal Code Lookup</h1>
-    <p class="subtitle">ค้นหารหัสไปรษณีย์ไทย</p>
+<div class="card">
+  <h1>Thailand Postal Code Lookup</h1>
+  <p class="subtitle">ค้นหารหัสไปรษณีย์ไทย</p>
 
-    <hr class="divider">
+  <hr class="divider">
 
-    <div id="status" class="status-row">
-      <div class="spinner"></div>
-      <span id="status-text">Loading...</span>
+  <div id="status" class="status-row">
+    <div class="spinner"></div>
+    <span id="status-text">Loading...</span>
+  </div>
+
+  <div id="selects" hidden>
+    <div class="field">
+      <label for="cb-prov-input">Province / จังหวัด</label>
+      <div class="combo" id="combo-province">
+        <div class="cb-wrap">
+          <input id="cb-prov-input" class="cb-input" type="text"
+                 placeholder="Search province..." autocomplete="off" spellcheck="false">
+          <button class="cb-icon-btn cb-clear" type="button" aria-label="Clear province" hidden>
+            <svg viewBox="0 0 14 14" fill="none" width="14" height="14">
+              <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="cb-icon-btn cb-chevron" type="button" tabindex="-1" aria-hidden="true">
+            <svg viewBox="0 0 12 8" fill="none" width="12" height="8">
+              <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="cb-list" role="listbox" hidden></ul>
+      </div>
     </div>
 
-    <div id="selects" hidden>
-      <div class="field">
-        <label for="province">Province / จังหวัด</label>
-        <select id="province">
-          <option value="">— Select province —</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="district">District / อำเภอ</label>
-        <select id="district" disabled>
-          <option value="">— Select district —</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="subdistrict">Sub-district / ตำบล</label>
-        <select id="subdistrict" disabled>
-          <option value="">— Select sub-district —</option>
-        </select>
+    <div class="field">
+      <label for="cb-dist-input">District / อำเภอ</label>
+      <div class="combo disabled" id="combo-district">
+        <div class="cb-wrap">
+          <input id="cb-dist-input" class="cb-input" type="text"
+                 placeholder="Select province first" autocomplete="off" spellcheck="false">
+          <button class="cb-icon-btn cb-clear" type="button" aria-label="Clear district" hidden>
+            <svg viewBox="0 0 14 14" fill="none" width="14" height="14">
+              <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="cb-icon-btn cb-chevron" type="button" tabindex="-1" aria-hidden="true">
+            <svg viewBox="0 0 12 8" fill="none" width="12" height="8">
+              <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="cb-list" role="listbox" hidden></ul>
       </div>
     </div>
 
-    <div class="result" id="result" hidden>
-      <div>
-        <div class="result-label">Postal code</div>
-        <div class="postal-code" id="postal-code"></div>
+    <div class="field">
+      <label for="cb-sub-input">Sub-district / ตำบล</label>
+      <div class="combo disabled" id="combo-subdistrict">
+        <div class="cb-wrap">
+          <input id="cb-sub-input" class="cb-input" type="text"
+                 placeholder="Select province first" autocomplete="off" spellcheck="false">
+          <button class="cb-icon-btn cb-clear" type="button" aria-label="Clear sub-district" hidden>
+            <svg viewBox="0 0 14 14" fill="none" width="14" height="14">
+              <path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="cb-icon-btn cb-chevron" type="button" tabindex="-1" aria-hidden="true">
+            <svg viewBox="0 0 12 8" fill="none" width="12" height="8">
+              <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul class="cb-list" role="listbox" hidden></ul>
       </div>
-      <button class="copy-btn" id="copy-btn" type="button">
-        <svg id="icon-copy" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <svg id="icon-check" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
-          <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span id="copy-label">Copy</span>
-      </button>
+    </div>
+
+    <div class="reset-row" id="reset-row" hidden>
+      <button class="reset-btn" id="reset-btn" type="button">Clear all</button>
     </div>
   </div>
 
-  <script>
-    // Derive the JSON base from the current page URL so this works on
-    // GitHub Pages (served under /thailand-geodata/) and any local server.
-    const BASE = new URL('../../json', location.href).href;
+  <div class="result" id="result" hidden>
+    <div>
+      <div class="result-label">Postal code</div>
+      <div class="postal-code" id="postal-code"></div>
+    </div>
+    <button class="copy-btn" id="copy-btn" type="button">
+      <svg id="icon-copy" viewBox="0 0 16 16" fill="none">
+        <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg id="icon-check" viewBox="0 0 16 16" fill="none" style="display:none">
+        <path d="M3 8l3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="copy-label">Copy</span>
+    </button>
+  </div>
+</div>
 
-    let provinces   = [];
-    let districts   = [];
-    let subDistricts = null; // loaded lazily on first district selection
+<script>
+  const BASE = new URL('../../json', location.href).href;
 
-    const $province    = document.getElementById('province');
-    const $district    = document.getElementById('district');
-    const $subdistrict = document.getElementById('subdistrict');
-    const $result      = document.getElementById('result');
-    const $postalCode  = document.getElementById('postal-code');
-    const $copyBtn     = document.getElementById('copy-btn');
-    const $copyLabel   = document.getElementById('copy-label');
-    const $iconCopy    = document.getElementById('icon-copy');
-    const $iconCheck   = document.getElementById('icon-check');
-    const $status      = document.getElementById('status');
-    const $statusText  = document.getElementById('status-text');
-    const $selects     = document.getElementById('selects');
+  // ── Combo class ─────────────────────────────────────────────────────────────
+  class Combo {
+    constructor(el, { onSelect, onClear } = {}) {
+      this.el       = el;
+      this.input    = el.querySelector('.cb-input');
+      this.clearBtn = el.querySelector('.cb-clear');
+      this.chevron  = el.querySelector('.cb-chevron');
+      this.list     = el.querySelector('.cb-list');
 
-    async function fetchJSON(url) {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-      return res.json();
+      this.items    = [];
+      this.value    = null;
+      this.label    = null;
+      this.extra    = null;  // arbitrary payload (e.g. postal code)
+      this.isOpen   = false;
+      this.cursor   = -1;
+
+      this.onSelect = onSelect || (() => {});
+      this.onClear  = onClear  || (() => {});
+
+      this._bind();
     }
 
-    async function init() {
-      try {
-        // Load the two small files upfront (provinces: ~16 KB, districts: ~245 KB).
-        // sub_districts.json (~2.6 MB) loads lazily when the user picks a district.
-        const [pData, dData] = await Promise.all([
-          fetchJSON(`${BASE}/provinces.json`),
-          fetchJSON(`${BASE}/districts.json`)
-        ]);
+    // ── Public API ────────────────────────────────────────────────────────────
 
-        provinces = pData.provinces;
-        districts = dData.districts;
+    load(items) {
+      this.items = items;
+    }
 
-        provinces
-          .slice()
-          .sort((a, b) => a.PROVINCE_ENGLISH.localeCompare(b.PROVINCE_ENGLISH))
-          .forEach(p => {
-            $province.add(new Option(
-              `${p.PROVINCE_ENGLISH} / ${p.PROVINCE_THAI}`,
-              p.PROVINCE_ID
-            ));
-          });
+    select(value, label, extra, silent = false) {
+      this.value = value;
+      this.label = label;
+      this.extra = extra;
+      this.input.value = label;
+      this.clearBtn.hidden = false;
+      this._close();
+      if (!silent) this.onSelect(value, extra);
+    }
 
-        $status.hidden = true;
-        $selects.hidden = false;
-      } catch (err) {
-        $statusText.textContent = `Could not load data (${err.message}). Open from a local server or GitHub Pages.`;
-        $statusText.classList.add('error-msg');
-        $status.querySelector('.spinner').hidden = true;
+    clear(silent = false) {
+      this.value = null;
+      this.label = null;
+      this.extra = null;
+      this.input.value = '';
+      this.clearBtn.hidden = true;
+      this._close();
+      if (!silent) this.onClear();
+    }
+
+    // Replace items and reset selection without firing callbacks.
+    reset(items, placeholder) {
+      this.items = items;
+      this.value = null;
+      this.label = null;
+      this.extra = null;
+      this.input.value = '';
+      this.clearBtn.hidden = true;
+      if (placeholder != null) this.input.placeholder = placeholder;
+      this._close();
+    }
+
+    enable(placeholder) {
+      this.el.classList.remove('disabled');
+      if (placeholder != null) this.input.placeholder = placeholder;
+    }
+
+    disable(placeholder) {
+      this.el.classList.add('disabled');
+      if (placeholder != null) this.input.placeholder = placeholder;
+      this._close();
+    }
+
+    // ── Internal ──────────────────────────────────────────────────────────────
+
+    _open() {
+      if (this.el.classList.contains('disabled')) return;
+      const q = this.input.value;
+      this._render(q ? this._filter(q) : this.items);
+      this.list.hidden = false;
+      this.isOpen = true;
+      this.el.classList.add('open');
+    }
+
+    _close() {
+      this.list.hidden = true;
+      this.isOpen = false;
+      this.cursor = -1;
+      this.el.classList.remove('open');
+      // Restore the selected label if the user typed without picking anything.
+      this.input.value = this.label || '';
+    }
+
+    _filter(q) {
+      const lq = q.toLowerCase();
+      return this.items.filter(it => it.label.toLowerCase().includes(lq));
+    }
+
+    _render(items) {
+      this.list.innerHTML = '';
+      this.cursor = -1;
+
+      if (!items.length) {
+        const li = document.createElement('li');
+        li.className = 'cb-no-result';
+        li.textContent = 'No results';
+        this.list.appendChild(li);
+        return;
       }
+
+      items.forEach(it => {
+        const li = document.createElement('li');
+        li.className = 'cb-opt';
+        li.setAttribute('role', 'option');
+        li.textContent = it.label;
+        li.addEventListener('mousedown', e => {
+          e.preventDefault(); // keep focus on input
+          this.select(it.value, it.label, it.extra);
+        });
+        this.list.appendChild(li);
+      });
     }
 
-    $province.addEventListener('change', () => {
-      const id = parseInt($province.value, 10);
+    _moveCursor(dir) {
+      const opts = [...this.list.querySelectorAll('.cb-opt')];
+      if (!opts.length) return;
+      if (this.cursor >= 0) opts[this.cursor]?.classList.remove('hi');
+      this.cursor = Math.max(0, Math.min(opts.length - 1, this.cursor + dir));
+      opts[this.cursor].classList.add('hi');
+      opts[this.cursor].scrollIntoView({ block: 'nearest' });
+    }
 
-      reset($district, '— Select district —');
-      reset($subdistrict, '— Select sub-district —');
-      $district.disabled = true;
-      $subdistrict.disabled = true;
-      $result.hidden = true;
+    _bind() {
+      this.input.addEventListener('focus', () => {
+        if (this.el.classList.contains('disabled')) return;
+        if (this.value) this.input.value = ''; // clear to let user type
+        this._open();
+      });
 
-      if (!id) return;
+      this.input.addEventListener('blur', () => {
+        setTimeout(() => this._close(), 120);
+      });
 
-      districts
-        .filter(d => d.PROVINCE_ID === id)
+      this.input.addEventListener('input', () => {
+        const filtered = this._filter(this.input.value);
+        this._render(filtered);
+        this.list.hidden = false;
+        this.isOpen = true;
+        this.el.classList.add('open');
+      });
+
+      this.input.addEventListener('keydown', e => {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          if (!this.isOpen) this._open(); else this._moveCursor(1);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          this._moveCursor(-1);
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          const hi = this.list.querySelector('.cb-opt.hi');
+          if (hi) hi.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+        } else if (e.key === 'Escape') {
+          this._close();
+          this.input.blur();
+        }
+      });
+
+      // Clear button: mousedown so it fires before blur closes the list.
+      this.clearBtn.addEventListener('mousedown', e => {
+        e.preventDefault();
+        this.clear();
+        this.input.focus();
+      });
+
+      // Chevron toggles the dropdown.
+      this.chevron.addEventListener('mousedown', e => {
+        e.preventDefault();
+        if (this.el.classList.contains('disabled')) return;
+        if (this.isOpen) { this._close(); this.input.blur(); }
+        else { this.input.focus(); }
+      });
+    }
+  }
+
+  // ── App ──────────────────────────────────────────────────────────────────────
+
+  const BASE_PATH = new URL('../../json', location.href).href;
+
+  let provinces    = [];
+  let districts    = [];
+  let subDistricts = null; // lazy-loaded on first district selection
+
+  const $result    = document.getElementById('result');
+  const $postal    = document.getElementById('postal-code');
+  const $copyBtn   = document.getElementById('copy-btn');
+  const $copyLabel = document.getElementById('copy-label');
+  const $iconCopy  = document.getElementById('icon-copy');
+  const $iconCheck = document.getElementById('icon-check');
+  const $status    = document.getElementById('status');
+  const $statusTxt = document.getElementById('status-text');
+  const $selects   = document.getElementById('selects');
+  const $resetRow  = document.getElementById('reset-row');
+  const $resetBtn  = document.getElementById('reset-btn');
+
+  const provCombo = new Combo(document.getElementById('combo-province'), {
+    onSelect(id) {
+      const items = districts
+        .filter(d => d.PROVINCE_ID === parseInt(id, 10))
         .sort((a, b) => a.DISTRICT_ENGLISH.localeCompare(b.DISTRICT_ENGLISH))
-        .forEach(d => {
-          $district.add(new Option(
-            `${d.DISTRICT_ENGLISH} / ${d.DISTRICT_THAI}`,
-            d.DISTRICT_ID
-          ));
-        });
+        .map(d => ({ value: d.DISTRICT_ID, label: `${d.DISTRICT_ENGLISH} / ${d.DISTRICT_THAI}` }));
 
-      $district.disabled = false;
-    });
+      distCombo.reset(items, 'Search district...');
+      distCombo.enable('Search district...');
+      subdCombo.reset([], 'Select district first');
+      subdCombo.disable('Select district first');
+      hideResult();
+      $resetRow.hidden = false;
+    },
+    onClear() {
+      distCombo.reset([], 'Select province first');
+      distCombo.disable('Select province first');
+      subdCombo.reset([], 'Select province first');
+      subdCombo.disable('Select province first');
+      hideResult();
+      $resetRow.hidden = true;
+    }
+  });
 
-    $district.addEventListener('change', async () => {
-      const id = parseInt($district.value, 10);
+  const distCombo = new Combo(document.getElementById('combo-district'), {
+    async onSelect(id) {
+      subdCombo.reset([], 'Loading sub-districts...');
+      subdCombo.disable('Loading sub-districts...');
+      hideResult();
 
-      reset($subdistrict, '— Select sub-district —');
-      $subdistrict.disabled = true;
-      $result.hidden = true;
-
-      if (!id) return;
-
-      // Lazy-load sub_districts on first use.
       if (!subDistricts) {
-        reset($subdistrict, '— Loading sub-districts... —');
         try {
-          const data = await fetchJSON(`${BASE}/sub_districts.json`);
+          const data = await fetchJSON(`${BASE_PATH}/sub_districts.json`);
           subDistricts = data.sub_districts;
         } catch (err) {
-          reset($subdistrict, `— Failed to load sub-districts —`);
+          subdCombo.reset([], 'Failed to load sub-districts');
+          subdCombo.disable('Failed to load sub-districts');
           return;
         }
       }
 
-      subDistricts
-        .filter(sd => sd.DISTRICT_ID === id)
+      const items = subDistricts
+        .filter(sd => sd.DISTRICT_ID === parseInt(id, 10))
         .sort((a, b) => a.SUB_DISTRICT_ENGLISH.localeCompare(b.SUB_DISTRICT_ENGLISH))
-        .forEach(sd => {
-          const opt = new Option(
-            `${sd.SUB_DISTRICT_ENGLISH} / ${sd.SUB_DISTRICT_THAI}`,
-            sd.SUB_DISTRICT_ID
-          );
-          opt.dataset.postal = sd.POSTAL_CODE;
-          $subdistrict.add(opt);
-        });
+        .map(sd => ({
+          value: sd.SUB_DISTRICT_ID,
+          label: `${sd.SUB_DISTRICT_ENGLISH} / ${sd.SUB_DISTRICT_THAI}`,
+          extra: sd.POSTAL_CODE
+        }));
 
-      $subdistrict.disabled = false;
-    });
-
-    $subdistrict.addEventListener('change', () => {
-      const opt = $subdistrict.options[$subdistrict.selectedIndex];
-      if (!opt || !opt.dataset.postal) {
-        $result.hidden = true;
-        return;
-      }
-      $postalCode.textContent = opt.dataset.postal;
-      $result.hidden = false;
-    });
-
-    $copyBtn.addEventListener('click', async () => {
-      const code = $postalCode.textContent;
-      try {
-        await navigator.clipboard.writeText(code);
-      } catch {
-        const el = document.createElement('textarea');
-        el.value = code;
-        el.style.cssText = 'position:fixed;opacity:0';
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-      }
-      showCopied();
-    });
-
-    function reset(select, placeholder) {
-      select.innerHTML = '';
-      select.add(new Option(placeholder, ''));
+      subdCombo.reset(items, 'Search sub-district...');
+      subdCombo.enable('Search sub-district...');
+    },
+    onClear() {
+      subdCombo.reset([], 'Select district first');
+      subdCombo.disable('Select district first');
+      hideResult();
     }
+  });
 
-    function showCopied() {
-      $copyBtn.classList.add('copied');
-      $copyLabel.textContent = 'Copied!';
-      $iconCopy.style.display = 'none';
-      $iconCheck.style.display = '';
-      setTimeout(() => {
-        $copyBtn.classList.remove('copied');
-        $copyLabel.textContent = 'Copy';
-        $iconCopy.style.display = '';
-        $iconCheck.style.display = 'none';
-      }, 2000);
+  const subdCombo = new Combo(document.getElementById('combo-subdistrict'), {
+    onSelect(id, postal) {
+      if (postal) {
+        $postal.textContent = postal;
+        $result.hidden = false;
+      }
+    },
+    onClear() {
+      hideResult();
     }
+  });
 
-    init();
-  </script>
+  $resetBtn.addEventListener('click', () => {
+    provCombo.clear(true);
+    distCombo.reset([], 'Select province first');
+    distCombo.disable('Select province first');
+    subdCombo.reset([], 'Select province first');
+    subdCombo.disable('Select province first');
+    hideResult();
+    $resetRow.hidden = true;
+  });
+
+  $copyBtn.addEventListener('click', async () => {
+    const code = $postal.textContent;
+    try {
+      await navigator.clipboard.writeText(code);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = code;
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    $copyBtn.classList.add('copied');
+    $copyLabel.textContent = 'Copied!';
+    $iconCopy.style.display = 'none';
+    $iconCheck.style.display = '';
+    setTimeout(() => {
+      $copyBtn.classList.remove('copied');
+      $copyLabel.textContent = 'Copy';
+      $iconCopy.style.display = '';
+      $iconCheck.style.display = 'none';
+    }, 2000);
+  });
+
+  function hideResult() { $result.hidden = true; }
+
+  async function fetchJSON(url) {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
+    return res.json();
+  }
+
+  async function init() {
+    try {
+      const [pData, dData] = await Promise.all([
+        fetchJSON(`${BASE_PATH}/provinces.json`),
+        fetchJSON(`${BASE_PATH}/districts.json`)
+      ]);
+
+      provinces = pData.provinces;
+      districts = dData.districts;
+
+      provCombo.load(
+        provinces
+          .slice()
+          .sort((a, b) => a.PROVINCE_ENGLISH.localeCompare(b.PROVINCE_ENGLISH))
+          .map(p => ({ value: p.PROVINCE_ID, label: `${p.PROVINCE_ENGLISH} / ${p.PROVINCE_THAI}` }))
+      );
+      provCombo.enable('Search province...');
+
+      $status.hidden = true;
+      $selects.hidden = false;
+    } catch (err) {
+      $statusTxt.textContent =
+        `Could not load data (${err.message}). Open from a local server or GitHub Pages.`;
+      $statusTxt.classList.add('error-msg');
+      $status.querySelector('.spinner').hidden = true;
+    }
+  }
+
+  init();
+</script>
 </body>
 </html>
