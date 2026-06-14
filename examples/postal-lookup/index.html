@@ -148,10 +148,7 @@
 
     .copy-btn:hover { background: #2b6cb0; }
     .copy-btn:active { transform: scale(0.97); }
-
-    .copy-btn.copied {
-      background: #38a169;
-    }
+    .copy-btn.copied { background: #38a169; }
 
     .copy-btn svg {
       width: 14px;
@@ -159,13 +156,13 @@
       flex-shrink: 0;
     }
 
-    /* Loading state */
-    .loading-row {
+    /* Status row */
+    .status-row {
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: #718096;
       font-size: 0.875rem;
+      color: #718096;
       margin-top: 1rem;
     }
 
@@ -175,22 +172,14 @@
       border: 2px solid #e2e8f0;
       border-top-color: #4299e1;
       border-radius: 50%;
+      flex-shrink: 0;
       animation: spin 0.6s linear infinite;
     }
 
     @keyframes spin { to { transform: rotate(360deg); } }
 
     .error-msg {
-      margin-top: 1rem;
-      font-size: 0.875rem;
       color: #e53e3e;
-    }
-
-    /* Sub-district extra info */
-    .subdistrict-info {
-      margin-top: 0.5rem;
-      font-size: 0.8125rem;
-      color: #718096;
     }
 
     @media (max-width: 380px) {
@@ -206,9 +195,9 @@
 
     <hr class="divider">
 
-    <div id="status" class="loading-row">
+    <div id="status" class="status-row">
       <div class="spinner"></div>
-      Loading data...
+      <span id="status-text">Loading...</span>
     </div>
 
     <div id="selects" hidden>
@@ -253,8 +242,13 @@
   </div>
 
   <script>
-    const BASE = '../../json';
-    let provinces = [], districts = [], subDistricts = [];
+    // Derive the JSON base from the current page URL so this works on
+    // GitHub Pages (served under /thailand-geodata/) and any local server.
+    const BASE = new URL('../../json', location.href).href;
+
+    let provinces   = [];
+    let districts   = [];
+    let subDistricts = null; // loaded lazily on first district selection
 
     const $province    = document.getElementById('province');
     const $district    = document.getElementById('district');
@@ -266,25 +260,26 @@
     const $iconCopy    = document.getElementById('icon-copy');
     const $iconCheck   = document.getElementById('icon-check');
     const $status      = document.getElementById('status');
+    const $statusText  = document.getElementById('status-text');
     const $selects     = document.getElementById('selects');
+
+    async function fetchJSON(url) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      return res.json();
+    }
 
     async function init() {
       try {
-        const [pRes, dRes, sdRes] = await Promise.all([
-          fetch(`${BASE}/provinces.json`),
-          fetch(`${BASE}/districts.json`),
-          fetch(`${BASE}/sub_districts.json`)
+        // Load the two small files upfront (provinces: ~16 KB, districts: ~245 KB).
+        // sub_districts.json (~2.6 MB) loads lazily when the user picks a district.
+        const [pData, dData] = await Promise.all([
+          fetchJSON(`${BASE}/provinces.json`),
+          fetchJSON(`${BASE}/districts.json`)
         ]);
 
-        if (!pRes.ok || !dRes.ok || !sdRes.ok) throw new Error('Failed to fetch data');
-
-        const [pData, dData, sdData] = await Promise.all([
-          pRes.json(), dRes.json(), sdRes.json()
-        ]);
-
-        provinces    = pData.provinces;
-        districts    = dData.districts;
-        subDistricts = sdData.sub_districts;
+        provinces = pData.provinces;
+        districts = dData.districts;
 
         provinces
           .slice()
@@ -299,7 +294,9 @@
         $status.hidden = true;
         $selects.hidden = false;
       } catch (err) {
-        $status.innerHTML = `<span class="error-msg">Could not load data. Make sure you are running this from a local server or GitHub Pages.</span>`;
+        $statusText.textContent = `Could not load data (${err.message}). Open from a local server or GitHub Pages.`;
+        $statusText.classList.add('error-msg');
+        $status.querySelector('.spinner').hidden = true;
       }
     }
 
@@ -327,7 +324,7 @@
       $district.disabled = false;
     });
 
-    $district.addEventListener('change', () => {
+    $district.addEventListener('change', async () => {
       const id = parseInt($district.value, 10);
 
       reset($subdistrict, '— Select sub-district —');
@@ -335,6 +332,18 @@
       $result.hidden = true;
 
       if (!id) return;
+
+      // Lazy-load sub_districts on first use.
+      if (!subDistricts) {
+        reset($subdistrict, '— Loading sub-districts... —');
+        try {
+          const data = await fetchJSON(`${BASE}/sub_districts.json`);
+          subDistricts = data.sub_districts;
+        } catch (err) {
+          reset($subdistrict, `— Failed to load sub-districts —`);
+          return;
+        }
+      }
 
       subDistricts
         .filter(sd => sd.DISTRICT_ID === id)
@@ -368,8 +377,7 @@
       } catch {
         const el = document.createElement('textarea');
         el.value = code;
-        el.style.position = 'fixed';
-        el.style.opacity = '0';
+        el.style.cssText = 'position:fixed;opacity:0';
         document.body.appendChild(el);
         el.select();
         document.execCommand('copy');
