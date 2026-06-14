@@ -35,6 +35,14 @@ Data formats:
 - Thai/English tooltips with a language toggle
 - Built with Leaflet and `apisit/thailand.json` province boundaries
 
+### Postal code lookup
+[GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/postal-lookup/)
+
+- Select province, district, and sub-district to find the postal code
+- Copy to clipboard with one click
+- Mobile-responsive
+- Runs on GitHub Pages with no installation
+
 ### Code examples
 Working examples in [examples/](./examples/):
 
