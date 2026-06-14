@@ -1,69 +1,67 @@
 # Database of Thailand Geodata with Province, District, Sub-district, Postal code, and Geo
-An open dataset of Thailand's administrative divisions and postal codes is freely available for research, analysis, and application development.
+An open dataset of Thailand's administrative divisions and postal codes, available for research, analysis, and application development.
 
 ## Overview
-Thailand Geodata is an open dataset that provides comprehensive geographic information on Thailand’s administrative divisions, including provinces, districts, sub-districts, and postal codes. This dataset is available in CSV, JSON, and SQL formats to facilitate a wide range of applications, including research, application development, geographic analysis, and public data services.
+Thailand Geodata is an open dataset covering Thailand's administrative divisions: provinces, districts, sub-districts, and postal codes. It comes in CSV, JSON, and SQL formats.
 
-**This dataset includes:**
+This dataset includes:
 
-- Provinces: Names and codes for all provinces in Thailand.
-- Districts and Sub-districts: Names and codes for districts and sub-districts, enabling easy hierarchical organization.
-- Postal Codes: Standardized postal codes for each sub-district.
+- Provinces: names and codes for all provinces in Thailand
+- Districts and sub-districts: names and codes, organized hierarchically
+- Postal codes: standardized codes for each sub-district
 
-**Data Formats:**
+Data formats:
 
-- CSV: Ideal for spreadsheet applications and data analysis.
-- JSON: Suitable for web applications and APIs.
-- SQL: Ready to be imported directly into databases for system integration.
+- CSV: for spreadsheet applications and data analysis
+- JSON: for web applications and APIs
+- SQL: for direct database import
 
-Thailand Geodata is designed to support developers, researchers, and the general public, enabling diverse uses such as application development, regional mapping, and spatial analysis of Thailand.
+## Examples and live demo
 
-## 🚀 Examples and Live Demo
+### Interactive web app
+[GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-app/)
 
-### 🌐 **Interactive Web App**
-**Try it now:** [GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-app/)
+- Real-time statistics and search
+- Province, district, and sub-district drill-down
+- Postal code lookup by sub-district name (Thai or English) or by 5-digit code
+- Mobile-responsive
+- Runs on GitHub Pages with no installation
 
-- 📊 Real-time statistics and search functionality
-- 🗺️ Interactive province → district → sub-district drill-down
-- 📮 Postal code lookup by sub-district name (Thai/English) or by 5-digit postal code
-- 📱 Mobile-responsive design for all devices
-- ⚡ Runs directly on GitHub Pages - no installation required
+### Interactive map
+[GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-map/)
 
-### 🗺️ **Interactive Map** ⭐ **NEW!**
-**Try it now:** [GitHub Pages Demo](https://dhanabhon.github.io/thailand-geodata/examples/web-map/)
+- Choropleth map of all 77 provinces, colored by district count
+- Click any province to see its districts, sub-districts, and all postal codes
+- Thai/English tooltips with a language toggle
+- Built with Leaflet and `apisit/thailand.json` province boundaries
 
-- 🎨 Choropleth map of all 77 provinces, colored by district count
-- 🖱️ Click any province to view its districts, sub-districts, and every postal code
-- 🌐 Thai/English tooltips and labels with one-click language toggle
-- 🧭 Powered by Leaflet + `apisit/thailand.json` boundaries
+### Code examples
+Working examples in [examples/](./examples/):
 
-### 💻 **Multi-Language Code Examples**
-Ready-to-use examples in [examples/](./examples/):
-- **Python** - Data analysis with pandas
-- **JavaScript/Node.js** - For web apps and APIs
-- **Java** - With Maven and JSON processing
-- **Go** - High performance with built-in JSON handling
-- **PHP** - For websites with CSV export functionality
-- **C#** - .NET 6 with async/await patterns
+- **Python** - data analysis with pandas
+- **JavaScript/Node.js** - web apps and APIs
+- **Java** - Maven with JSON processing
+- **Go** - built-in JSON handling
+- **PHP** - websites with CSV export
+- **C#** - .NET 6 with async/await
 
-Each example includes:
-- ✅ Detailed setup and usage documentation
-- ✅ Ready-to-run code with proper error handling
-- ✅ Search, filtering, and data display features
+Each example has setup instructions, error handling, and basic search and filter functionality.
 
-## File Structure and Data Fields
-The Thailand Geodata dataset includes multiple formats: CSV, JSON, and SQL, each with structured fields to facilitate easy use and integration. Here’s an overview of the main fields in each file format:
+## File structure and data fields
+The dataset comes in CSV, JSON, and SQL formats, each with structured fields:
 
-**1. CSV Files**
-   - Key Fields:
-     - `PROVINCE_ID`: Unique ID for each province
-     - `CODE`: Unique code for each province
-     - `PROVINCE_THAI` and `PROVINCE_ENGLISH`: Province names in Thai and English
-     - `UPDATED_AT`: Timestamp indicating when the record was last updated
-     - `CREATED_AT`: Timestamp indicating when the record was created
-  
-**2. JSON Files**
-  - The JSON structure is hierarchical, making it easy to access data at each level:
+**CSV files**
+
+Key fields:
+- `PROVINCE_ID`: unique ID for each province
+- `CODE`: unique code for each province
+- `PROVINCE_THAI` and `PROVINCE_ENGLISH`: province names in Thai and English
+- `UPDATED_AT`: when the record was last updated
+- `CREATED_AT`: when the record was created
+
+**JSON files**
+
+The JSON structure is hierarchical:
 
 ```json
 {
@@ -76,31 +74,28 @@ The Thailand Geodata dataset includes multiple formats: CSV, JSON, and SQL, each
 }
 ```
 
-**3. SQL Files**
+**SQL files**
 
-- The SQL file includes commands for creating and populating database tables:
-  
-  - Table Structure:
-    - `Provinces`: Stores province data
-    - `Districts`: Stores district data
-    - `Sub_Districts`: Stores sub-district data with postal codes
+The SQL file creates and populates three tables:
 
-  - Key Fields:
-    - `PROVINCE_ID`, `CODE`, `PROVINCE_THAI`, `PROVINCE_ENGLISH`, `UPDATED_AT`, `CREATED_AT`
-    - `DISTRICT_ID`, `PROVINCE_ID`, `CODE`, `DISTRICT_CODE`, `DISTRICT_THAI`, `PROVINCE_ENGLISH`, `UPDATED_AT`, `CREATED_AT`
-    - `SUB_DISTRICT_ID`, `DISTRICT_ID`, `CODE`, `SUB_DISTRICT_CODE`, `SUB_DISTRICT_THAI`, `SUB_DISTRICT_ENGLISH`, `LATITUDE`, `LONGITUDE`, `POSTAL_CODE`, `UPDATED_AT`, `CREATED_AT`
-   
-Including the `CREATED_AT` and `UPDATED_AT` fields helps track changes and manage data updates effectively.
+- `Provinces`
+- `Districts`
+- `Sub_Districts` (includes postal codes)
+
+Key fields:
+- `PROVINCE_ID`, `CODE`, `PROVINCE_THAI`, `PROVINCE_ENGLISH`, `UPDATED_AT`, `CREATED_AT`
+- `DISTRICT_ID`, `PROVINCE_ID`, `CODE`, `DISTRICT_CODE`, `DISTRICT_THAI`, `PROVINCE_ENGLISH`, `UPDATED_AT`, `CREATED_AT`
+- `SUB_DISTRICT_ID`, `DISTRICT_ID`, `CODE`, `SUB_DISTRICT_CODE`, `SUB_DISTRICT_THAI`, `SUB_DISTRICT_ENGLISH`, `LATITUDE`, `LONGITUDE`, `POSTAL_CODE`, `UPDATED_AT`, `CREATED_AT`
+
+The `CREATED_AT` and `UPDATED_AT` fields track when records were added or modified.
 
 ## ER Diagram
 ![ER Diagram](/er-diagram/er-diagram.png)
 
-## Contribution Guidelines
-Thank you for being so interested in contributing to Thailand Geodata! Here’s how to get involved:
+## Contribution guidelines
+To contribute:
 
-1. **Report Issues**: If you find any errors or have suggestions, open an issue with details.
-2. **Make Changes**: Fork the repo, create a branch, make your updates, and open a pull request (PR) to the main branch. Please follow existing data formats.
+1. **Report issues**: if you find errors or have suggestions, open an issue with details.
+2. **Make changes**: fork the repo, create a branch, make your updates, and open a pull request to the main branch. Follow the existing data formats.
 
 By contributing, you agree to license your contributions under the same terms as this project.
-
-We appreciate your help in making this dataset a valuable public resource!
